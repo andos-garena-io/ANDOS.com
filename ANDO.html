@@ -14894,9 +14894,16 @@ const PLANS = {
         function fitYuva() { var el = document.querySelector('#yuvaGate .screen'); if (!el) return; var w = Math.min(el.parentElement.clientWidth || el.clientWidth || window.innerWidth, 520); if (w > 0) { el.style.setProperty('--u', (w / 843) + 'px'); } }
         window.__ygHide = hideGate; window.__ygShow = showGate;
         document.documentElement.classList.add('yg-lock');
-        if (!isFirebaseEnabled || !auth) { showGate(); ytoast('Firebase config missing', 'err'); return; }
-        // safety: if Firebase never answers (offline), show gate after 6s
-        var __authTimer = setTimeout(function () { if (!(auth.currentUser)) showGate(); }, 6000);
+        if (!isFirebaseEnabled || !auth) {
+            showGate();
+            ytoast('Firebase config missing', 'err');
+            setTimeout(function () { location.replace('/login'); }, 120);
+            return;
+        }
+        // Safety: if Firebase never answers (offline), do not leave the app shell open.
+        var __authTimer = setTimeout(function () {
+            if (!(auth.currentUser)) { showGate(); location.replace('/login'); }
+        }, 6000);
         var provider = new firebase.auth.GoogleAuthProvider(); provider.setCustomParameters({ prompt: 'select_account' });
         var inApp = /FBAN|FBAV|Instagram|Line\/|MicroMessenger|Twitter/i.test(navigator.userAgent);
         var standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true || /source=pwa/.test(location.search);
@@ -14980,7 +14987,18 @@ const PLANS = {
         var firstEvent = true;
         auth.onAuthStateChanged(function (fbUser) {
             clearTimeout(__authTimer);
-            if (!fbUser || fbUser.isAnonymous) { busy(false); showGate(); firstEvent = false; return; }
+            if (!fbUser || fbUser.isAnonymous) {
+                busy(false);
+                showGate();
+                firstEvent = false;
+                if (!window.__andosAuthRedirecting) {
+                    window.__andosAuthRedirecting = true;
+                    setTimeout(function () {
+                        if (!auth.currentUser) location.replace('/login');
+                    }, 120);
+                }
+                return;
+            }
             var silent = firstEvent; firstEvent = false;
             if (silent) { hideGate(); }
             var created = fbUser.metadata && fbUser.metadata.creationTime, last = fbUser.metadata && fbUser.metadata.lastSignInTime;
@@ -15631,7 +15649,7 @@ const PLANS = {
             try { localStorage.clear(); } catch (e) {}
             try { if (relogin) localStorage.setItem('andos_relogin_v3', relogin); } catch (e) {}
             try { sessionStorage.clear(); } catch (e) {}
-            window.location.replace('index.html');
+            window.location.replace('/login');
         };
         try { var pr = window.ANDOS_FB && ANDOS_FB.saveUser ? ANDOS_FB.saveUser() : null; if (pr && pr.then) { pr.then(finish, finish); setTimeout(finish, 2500); return; } } catch (e) {}
         finish();
