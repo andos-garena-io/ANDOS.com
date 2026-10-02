@@ -1560,6 +1560,12 @@ html.dk .gbtn.tapped .sheen::before{
   .efInput{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.28);}
   .efGo{color:#111;background:#f5f7fb;}
 }
+
+.tgInlineWrap{width:100%;min-height:calc(116 * var(--u));margin-top:calc(24 * var(--u));padding:calc(14 * var(--u)) calc(20 * var(--u));box-sizing:border-box;border:1px solid rgba(var(--fg-rgb),.18);border-radius:calc(28 * var(--u));background:rgba(var(--fg-rgb),.035);display:flex;align-items:center;justify-content:center;gap:calc(18 * var(--u));}
+.tgInlineLabel{color:var(--fg);font-size:calc(26 * var(--u));font-weight:700;opacity:.74;white-space:nowrap;}
+.tgInlineMount{min-width:calc(230 * var(--u));min-height:calc(56 * var(--u));display:grid;place-items:center;}
+.tgInlineMount iframe{display:block;max-width:100%;}
+@media (max-width:430px){.tgInlineWrap{flex-direction:column;gap:calc(8 * var(--u));}.tgInlineLabel{font-size:calc(23 * var(--u));}.tgInlineMount{min-width:0;}}
 </style>
 </head>
 <body>
@@ -1597,11 +1603,12 @@ html.dk .gbtn.tapped .sheen::before{
         <span>Continue with Discord</span>
       </button>
 
+      <div class="tgInlineWrap" id="telegramInline" role="group" aria-label="Continue with Telegram">
+        <span class="tgInlineLabel">Continue with Telegram</span>
+        <div class="tgInlineMount" id="tgMount"></div>
+      </div>
+
       <div class="alt-row">
-        <button class="altbtn" type="button" id="telegramBtn">
-          <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="#2AABEE" d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/></svg>
-          <span>Telegram</span>
-        </button>
         <button class="altbtn" type="button" id="emailBtn">
           <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
           <span>Email</span>
@@ -1650,16 +1657,6 @@ html.dk .gbtn.tapped .sheen::before{
       </div>
     </div>
 
-    <!-- Telegram Login Widget sheet; widget is loaded only after the user taps Telegram -->
-    <div class="sheet-scrim auth-sheet" id="tgSheet" aria-hidden="true">
-      <div class="sheet auth-panel tgPanel" role="dialog" aria-modal="true" aria-labelledby="tgTitle">
-        <div class="sheet-grip" aria-hidden="true"></div>
-        <div class="efTitle"><h2 id="tgTitle">Continue with Telegram</h2><button class="efClose" id="tgClose" type="button" aria-label="Close">×</button></div>
-        <p class="tgHint">Telegram will verify your account securely.</p>
-        <div id="tgMount"></div>
-        <p class="tgHint">If the button does not load, the Telegram domain has not been authorised yet.</p>
-      </div>
-    </div>
   </main>
 
 
@@ -1973,7 +1970,7 @@ function showUser(user, silent = false) {
       try { sessionStorage.removeItem("andos_bounce"); } catch (e) {}
       return;
     }
-    location.replace("ANDO.html");
+    location.replace("/dashboard");
   }, silent ? 0 : 900);
 }
 
@@ -2097,11 +2094,9 @@ function wireClose(node, closeBtn) {
   node.addEventListener("click", e => { if (e.target === node) sheetCtl(node, false); });
 }
 const emailSheet = document.getElementById("emailSheet");
-const tgSheet = document.getElementById("tgSheet");
 wireClose(emailSheet, document.getElementById("efClose"));
-wireClose(tgSheet, document.getElementById("tgClose"));
 document.addEventListener("keydown", e => {
-  if (e.key === "Escape") { sheetCtl(emailSheet, false); sheetCtl(tgSheet, false); }
+  if (e.key === "Escape") sheetCtl(emailSheet, false);
 });
 
 /* ---------- Email/password ---------- */
@@ -2169,7 +2164,7 @@ if (efForgot) efForgot.addEventListener("click", async () => {
   } catch (err) { authMessage(err); }
 });
 
-/* ---------- Telegram Login Widget (lazy-loaded) ---------- */
+/* ---------- Telegram Login Widget (single-tap inline mount) ---------- */
 const tgMount = document.getElementById("tgMount");
 let tgLoaded = false;
 function loadTelegramWidget() {
@@ -2185,17 +2180,8 @@ function loadTelegramWidget() {
   script.setAttribute("data-auth-url", REDIR);
   tgMount.appendChild(script);
 }
-window.__tgAuth = async function(user) {
-  if (!user) return;
-  sheetCtl(tgSheet, false);
-  busy(true);
-  try {
-    const result = await postJson(AUTH + "/telegram", user);
-    await finishSocial(result);
-  } catch (err) { busy(false); authMessage(err); }
-};
-const telegramBtn = document.getElementById("telegramBtn");
-if (telegramBtn) telegramBtn.addEventListener("click", () => { sheetCtl(tgSheet, true); loadTelegramWidget(); });
+// The official Telegram button is visible inline; the user needs only one tap.
+loadTelegramWidget();
 
 /* ---------- GitHub, Discord, Steam OAuth ---------- */
 function startGithub() {
