@@ -94,6 +94,7 @@ The catalogue is data-driven inside the dashboard so that cards, plans, descript
 
 | Public URL | Purpose | Source/target |
 |---|---|---|
+| `/` | Public entry point | Rewrite to `ANDO.html`; unauthenticated users are redirected to `/login` |
 | `/login` | Clean login route | Rewrite to `login.html` |
 | `/login.html` | Legacy login route and exact OAuth callback | `login.html` |
 | `/dashboard` | Canonical successful-login route | Rewrite to `ANDO.html` |
@@ -196,7 +197,7 @@ The Vercel project is hosted at:
 https://andos-com.vercel.app
 ```
 
-`vercel.json` uses explicit rewrites and `trailingSlash: false`. `cleanUrls` is intentionally not enabled because the exact `.html` callback routes must remain backward-compatible.
+`vercel.json` uses explicit rewrites (including `/` to `ANDO.html`) and `trailingSlash: false`. `cleanUrls` is intentionally not enabled because the exact `.html` callback routes must remain backward-compatible.
 
 ---
 
