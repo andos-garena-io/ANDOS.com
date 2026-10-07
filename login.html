@@ -1532,7 +1532,7 @@ html.dk .gbtn.tapped .sheen::before{
 }
 </style>
 <style id="authCss">
-/* ANDOS login activation: email/password + Telegram sheets */
+/* ANDOS login activation: email/password + Telegram inside More */
 .auth-sheet .auth-panel{max-height:min(86vh,calc(720 * var(--u)));overflow:auto;padding-bottom:calc(30 * var(--u) + env(safe-area-inset-bottom));}
 .auth-panel .sheet-grip{margin-bottom:calc(22 * var(--u));}
 .efTitle{display:flex;align-items:center;justify-content:space-between;gap:calc(16 * var(--u));margin:0 0 calc(8 * var(--u));}
@@ -1561,11 +1561,13 @@ html.dk .gbtn.tapped .sheen::before{
   .efGo{color:#111;background:#f5f7fb;}
 }
 
-.tgInlineWrap{width:100%;min-height:calc(116 * var(--u));margin-top:calc(24 * var(--u));padding:calc(14 * var(--u)) calc(20 * var(--u));box-sizing:border-box;border:1px solid rgba(var(--fg-rgb),.18);border-radius:calc(28 * var(--u));background:rgba(var(--fg-rgb),.035);display:flex;align-items:center;justify-content:center;gap:calc(18 * var(--u));}
-.tgInlineLabel{color:var(--fg);font-size:calc(26 * var(--u));font-weight:700;opacity:.74;white-space:nowrap;}
-.tgInlineMount{min-width:calc(230 * var(--u));min-height:calc(56 * var(--u));display:grid;place-items:center;}
-.tgInlineMount iframe{display:block;max-width:100%;}
-@media (max-width:430px){.tgInlineWrap{flex-direction:column;gap:calc(8 * var(--u));}.tgInlineLabel{font-size:calc(23 * var(--u));}.tgInlineMount{min-width:0;}}
+/* Telegram appears only after More opens. The official iframe is the only
+   Telegram control; no duplicate/custom Telegram button is rendered. */
+.moreTelegram{display:flex;align-items:center;justify-content:center;min-height:calc(70 * var(--u));margin:0 0 calc(24 * var(--u));opacity:0;transform:translateY(calc(20 * var(--u)));transition:opacity .34s ease,transform .44s cubic-bezier(.22,1,.36,1);}
+.sheet-scrim.open .moreTelegram{opacity:1;transform:translateY(0);transition-delay:.08s;}
+.moreTelegram #tgMount{min-width:calc(230 * var(--u));min-height:calc(56 * var(--u));display:grid;place-items:center;margin:0;}
+.moreTelegram iframe{display:block;max-width:100%;}
+@media (prefers-reduced-motion:reduce){.moreTelegram{transition:opacity .01s;transform:none;opacity:1;}}
 </style>
 </head>
 <body>
@@ -1603,15 +1605,10 @@ html.dk .gbtn.tapped .sheen::before{
         <span>Continue with Discord</span>
       </button>
 
-      <div class="tgInlineWrap" id="telegramInline" role="group" aria-label="Continue with Telegram">
-        <span class="tgInlineLabel">Continue with Telegram</span>
-        <div class="tgInlineMount" id="tgMount"></div>
-      </div>
-
       <div class="alt-row">
-        <button class="altbtn" type="button" id="emailBtn">
-          <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          <span>Email</span>
+        <button class="altbtn" type="button" id="emailBtn" aria-label="Continue with Email">
+          <svg viewBox="0 0 24 24" aria-hidden="true" role="img" aria-label="Gmail"><path fill="#EA4335" d="M3 6.2A2.2 2.2 0 0 1 5.2 4h13.6A2.2 2.2 0 0 1 21 6.2v11.6a2.2 2.2 0 0 1-2.2 2.2H5.2A2.2 2.2 0 0 1 3 17.8V6.2Z"/><path fill="#4285F4" d="M3 6.35v11.43c0 1.23.99 2.22 2.22 2.22H7V9.35L3 6.35Z"/><path fill="#34A853" d="M17 9.35V20h1.78A2.22 2.22 0 0 0 21 17.78V6.35l-4 3Z"/><path fill="#FBBC04" d="m3 6.35 9 6.75 9-6.75V9.5l-9 6.75L3 9.5V6.35Z"/><path fill="#EA4335" d="m3 6.35 9 6.75 9-6.75v2.7l-9 6.75-9-6.75v-2.7Z" opacity=".95"/></svg>
+          <span>Continue with Email</span>
         </button>
         <button class="altbtn" type="button" id="moreBtn">
           <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
@@ -1626,10 +1623,15 @@ html.dk .gbtn.tapped .sheen::before{
       </p>
     </div>
 
-    <!-- More: bottom sheet — do bade options -->
+    <!-- More: bottom sheet — official Telegram widget + do bade options -->
     <div class="sheet-scrim" id="moreSheet" aria-hidden="true">
       <div class="sheet" role="dialog" aria-modal="true" aria-label="More ways to continue">
         <div class="sheet-grip" aria-hidden="true"></div>
+
+        <!-- Official Telegram widget only: no extra/custom Telegram button. -->
+        <div class="moreTelegram" id="telegramMore" role="group" aria-label="Continue with Telegram">
+          <div id="tgMount"></div>
+        </div>
 
         <button class="sheet-btn" type="button">
           <svg viewBox="0 0 1024 1024" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(64)" fill="currentColor"/></svg>
@@ -2164,7 +2166,7 @@ if (efForgot) efForgot.addEventListener("click", async () => {
   } catch (err) { authMessage(err); }
 });
 
-/* ---------- Telegram Login Widget (single-tap inline mount) ---------- */
+/* ---------- Telegram Login Widget (official widget inside More) ---------- */
 const tgMount = document.getElementById("tgMount");
 let tgLoaded = false;
 function loadTelegramWidget() {
@@ -2177,10 +2179,11 @@ function loadTelegramWidget() {
   script.setAttribute("data-size", "large");
   script.setAttribute("data-userpic", "false");
   script.setAttribute("data-request-access", "write");
-  script.setAttribute("data-auth-url", REDIR);
+  // Telegram's authorized callback must remain the exact production URL.
+  script.setAttribute("data-auth-url", VERCEL_REDIRECT);
   tgMount.appendChild(script);
 }
-// The official Telegram button is visible inline; the user needs only one tap.
+// The official Telegram button is the only Telegram control, inside More.
 loadTelegramWidget();
 
 /* ---------- GitHub, Discord, Steam OAuth ---------- */
