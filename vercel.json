@@ -8,6 +8,10 @@
     {
       "source": "/dashboard",
       "destination": "/ANDO.html"
+    },
+    {
+      "source": "/reset-password",
+      "destination": "/reset-password.html"
     }
   ]
 }
