@@ -10,6 +10,8 @@ The project is a Vercel static/"Others" deployment rather than a framework deplo
 - `/app-assets/*` -> `api/protected-asset.js`
 - direct `/api/_private/*` access -> 404
 
+The deploy bundle must not contain public root copies of `dashboard.html` or `ANDO.html`; `.vercelignore` excludes those aliases so the rewrite cannot be bypassed by Vercel's filesystem-first static routing. The rollback HTML copies remain in Drive and under the protected private bundle, not as public static files.
+
 Both gates verify `__Host-andos_session` with Firebase Admin `verifySessionCookie(cookie, true)` and redirect unauthenticated dashboard/asset requests to `/`. Responses are private/no-store and carry the security headers/CSP defined in `api/_lib/security.js`.
 
 ## Login/session contract

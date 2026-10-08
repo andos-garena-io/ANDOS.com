@@ -3,37 +3,10 @@
   "trailingSlash": false,
   "functions": {
     "api/protected-dashboard.js": {
-      "runtime": "nodejs22.x",
-      "includeFiles": [
-        "api/_private/dashboard.html"
-      ]
+      "includeFiles": "api/_private/dashboard.html"
     },
     "api/protected-asset.js": {
-      "runtime": "nodejs22.x",
-      "includeFiles": [
-        "api/_private/app-assets/**"
-      ]
-    },
-    "api/session.js": {
-      "runtime": "nodejs22.x"
-    },
-    "api/session/verify.js": {
-      "runtime": "nodejs22.x"
-    },
-    "api/session/logout.js": {
-      "runtime": "nodejs22.x"
-    },
-    "api/numlookup.js": {
-      "runtime": "nodejs22.x"
-    },
-    "api/ai.js": {
-      "runtime": "nodejs22.x"
-    },
-    "api/telegram/[method].js": {
-      "runtime": "nodejs22.x"
-    },
-    "api/private-denied.js": {
-      "runtime": "nodejs22.x"
+      "includeFiles": "api/_private/app-assets/**"
     }
   },
   "rewrites": [

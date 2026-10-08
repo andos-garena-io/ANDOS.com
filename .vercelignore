@@ -1,0 +1,11 @@
+# These aliases must be served only by api/protected-dashboard.js.
+dashboard.html
+ANDO.html
+site/dashboard.html
+site/ANDO.html
+secrets
+.agents
+.git
+*.py
+*.md
+workers
