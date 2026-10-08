@@ -3,10 +3,7 @@
   "trailingSlash": false,
   "functions": {
     "api/protected-dashboard.js": {
-      "includeFiles": [
-        "api/_private/dashboard.html",
-        "api/_private/auth-recover.html"
-      ]
+      "includeFiles": "api/_private/*.html"
     },
     "api/protected-asset.js": {
       "includeFiles": "api/_private/app-assets/**"
