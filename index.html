@@ -1791,6 +1791,23 @@ if (window.ResizeObserver) new ResizeObserver(fitScreen).observe(document.body);
 </script>
 
 <script type="module">
+/* Remove advertising identifiers before the auth flow starts. Firebase
+   callback fields such as code/state/id/auth_date/hash are preserved. */
+(() => {
+  const marketing = new Set([
+    "fbclid", "gclid", "dclid", "msclkid", "ttclid", "twclid", "yclid", "igshid",
+    "utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "utm_id",
+    "campaign_id", "ad_id", "mc_cid", "mc_eid"
+  ]);
+  try {
+    const url = new URL(location.href);
+    let changed = false;
+    for (const key of [...url.searchParams.keys()]) {
+      if (marketing.has(key.toLowerCase())) { url.searchParams.delete(key); changed = true; }
+    }
+    if (changed) history.replaceState(null, document.title, url.pathname + (url.search ? url.search : "") + url.hash);
+  } catch (_) {}
+})();
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import {
   getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect,
