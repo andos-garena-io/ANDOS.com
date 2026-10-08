@@ -14,6 +14,27 @@ html,body{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%;text-size-adjus
 html.auth-pending .screen,html.auth-pending #toast{visibility:hidden!important}
 </style>
 <script>
+/* If the durable server session is still valid, skip the public login shell
+   before Firebase finishes booting. This is the fast path for app reopen and
+   browser reload; the auth-pending guard remains the Firebase fallback. */
+(function () {
+  window.__andosServerSessionCheck = fetch("/api/session", {
+    method: "GET",
+    credentials: "same-origin",
+    cache: "no-store",
+    headers: { Accept: "application/json" }
+  }).then(function (response) {
+    if (!response.ok) return false;
+    return response.json().catch(function () { return {}; }).then(function (data) {
+      if (!data || !data.ok) return false;
+      window.__andosServerSessionValid = true;
+      if (location.pathname !== "/dashboard") location.replace("/dashboard");
+      return true;
+    });
+  }).catch(function () { return false; });
+})();
+</script>
+<script>
 /* ===== ZOOM LOCK (JS) — jin-jin raste se browser zoom karta hai, sab band ===== */
 (function(){
   function kill(e){ e.preventDefault(); }

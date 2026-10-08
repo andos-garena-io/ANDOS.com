@@ -1,8 +1,20 @@
 const { getAdminApp } = require('./_lib/firebase-admin');
-const { SESSION_COOKIE, SESSION_MAX_AGE, securityHeaders, json } = require('./_lib/security');
+const { SESSION_COOKIE, SESSION_MAX_AGE, verifyRequestSession, securityHeaders, json } = require('./_lib/security');
 
 module.exports = async function session(req, res) {
   securityHeaders(res);
+
+  /* A lightweight same-origin probe lets the public entry page bypass its
+     login shell immediately when the bounded HttpOnly session still exists.
+     It never returns profile data or the session token. */
+  if (req.method === 'GET') {
+    try {
+      const session = await verifyRequestSession(req);
+      return json(res, session ? 200 : 401, session ? { ok: true } : { ok: false, error: 'unauthorized' });
+    } catch (_) {
+      return json(res, 401, { ok: false, error: 'unauthorized' });
+    }
+  }
   if (req.method !== 'POST') return json(res, 405, { ok: false, error: 'method_not_allowed' });
 
   try {
