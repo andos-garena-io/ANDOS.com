@@ -1937,30 +1937,55 @@ btn.addEventListener("click", async () => {
 /* Route guard: an existing Firebase user should never see the login UI flash
    before being sent directly to the protected dashboard. */
 let redirectResultPending = true;
+let authStateResolved = false;
 let authGuardTimer;
+let authReleaseGraceTimer;
+const AUTH_RESTORE_GRACE_MS = 1800;
+const hasAuthStateReady = typeof auth.authStateReady === "function";
 function releaseAuthGuard() {
   clearTimeout(authGuardTimer);
+  clearTimeout(authReleaseGraceTimer);
   document.documentElement.classList.remove("auth-pending");
 }
+function maybeReleaseAuthGuard() {
+  /* Firebase can resolve its initial promise just before local persistence
+     restores the user. Give that restore a final grace window; releasing on
+     the first null callback is what causes the visible login flash. */
+  clearTimeout(authReleaseGraceTimer);
+  if (!authStateResolved || redirectResultPending || auth.currentUser) return;
+  authReleaseGraceTimer = setTimeout(() => {
+    if (authStateResolved && !redirectResultPending && !auth.currentUser) releaseAuthGuard();
+  }, AUTH_RESTORE_GRACE_MS);
+}
 authGuardTimer = setTimeout(releaseAuthGuard, 5000);
+if (hasAuthStateReady) {
+  auth.authStateReady().then(() => {
+    authStateResolved = true;
+    maybeReleaseAuthGuard();
+  }).catch(() => {
+    authStateResolved = true;
+    maybeReleaseAuthGuard();
+  });
+}
 
 /* returning from a redirect */
 getRedirectResult(auth)
   .then(res => {
     redirectResultPending = false;
     if (res?.user) showUser(res.user);
-    else { busy(false); releaseAuthGuard(); }
+    else { busy(false); maybeReleaseAuthGuard(); }
   })
   .catch(e => {
     redirectResultPending = false;
-    busy(false); releaseAuthGuard(); handleError(e);
+    busy(false); maybeReleaseAuthGuard(); handleError(e);
   });
 
 /* already signed in on this device */
 onAuthStateChanged(auth, user => {
+  if (!hasAuthStateReady) authStateResolved = true;
   busy(false);
   if (user) showUser(user, true);
-  else if (!redirectResultPending) releaseAuthGuard();
+  else maybeReleaseAuthGuard();
 });
 
 /* Keep the auth handoff focused on authentication. No visit counters,
@@ -1968,6 +1993,7 @@ onAuthStateChanged(auth, user => {
 let dashboardRedirectStarted = false;
 
 function showUser(user, silent = false) {
+  clearTimeout(authReleaseGraceTimer);
   busy(false);
   if (!user) return;
   try { sessionStorage.setItem("andos_auth_handoff", String(Date.now())); } catch (_) {}
