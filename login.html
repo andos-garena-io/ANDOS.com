@@ -1884,21 +1884,33 @@ const popupFallbackCodes = new Set([
   "auth/internal-error"
 ]);
 
-/* Google: popup first, then redirect only when the browser cannot host a popup.
-   This avoids the old mobile-only redirect loop while retaining an in-app fallback. */
+/* Google: popup first, then redirect when the browser cannot complete the
+   popup handoff. The timeout prevents an opener/COOP edge case from leaving
+   the user on the login page forever after selecting an account. */
+const POPUP_HANDOFF_TIMEOUT = 15000;
 async function startGoogleSignIn() {
   if (isEmbeddedBrowser) {
     await signInWithRedirect(auth, provider);
     return;
   }
+  let timer;
   try {
-    const res = await signInWithPopup(auth, provider);
+    const popupResult = signInWithPopup(auth, provider);
+    const timeout = new Promise((_, reject) => {
+      timer = setTimeout(() => {
+        const e = new Error("google_popup_timeout");
+        e.code = "auth/popup-timeout";
+        reject(e);
+      }, POPUP_HANDOFF_TIMEOUT);
+    });
+    const res = await Promise.race([popupResult, timeout]);
+    clearTimeout(timer);
     showUser(res.user);
   } catch (e) {
-    /* A browser may close the popup after Google account selection when
-       opener isolation or popup policy blocks the final handoff. Redirect
-       is the reliable second attempt on desktop and mobile alike. */
-    if (popupFallbackCodes.has(e && e.code)) {
+    clearTimeout(timer);
+    /* A browser may close or strand the popup after Google account
+       selection when opener isolation or popup policy blocks the handoff. */
+    if (popupFallbackCodes.has(e && e.code) || e?.code === "auth/popup-timeout") {
       await signInWithRedirect(auth, provider);
       return;
     }
