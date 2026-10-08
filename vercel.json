@@ -9,54 +9,44 @@
       "includeFiles": "api/_private/app-assets/**"
     }
   },
-  "rewrites": {
-    "beforeFiles": [
-      {
-        "source": "/",
-        "destination": "/api/auth-entry"
-      },
-      {
-        "source": "/index.html",
-        "destination": "/api/auth-entry"
-      },
-      {
-        "source": "/login",
-        "destination": "/api/auth-entry"
-      },
-      {
-        "source": "/login.html",
-        "destination": "/api/auth-entry"
-      },
-      {
-        "source": "/dashboard",
-        "destination": "/api/protected-dashboard"
-      },
-      {
-        "source": "/dashboard.html",
-        "destination": "/api/protected-dashboard"
-      },
-      {
-        "source": "/ANDO.html",
-        "destination": "/api/protected-dashboard"
-      },
-      {
-        "source": "/api/_private/:path*",
-        "destination": "/api/private-denied"
-      },
-      {
-        "source": "/api/ai/:path*",
-        "destination": "/api/ai"
-      },
-      {
-        "source": "/app-assets/:path*",
-        "destination": "/api/protected-asset?file=:path*"
-      },
-      {
-        "source": "/reset-password",
-        "destination": "/reset-password.html"
-      }
-    ]
-  },
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/login",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/dashboard",
+      "destination": "/api/protected-dashboard"
+    },
+    {
+      "source": "/dashboard.html",
+      "destination": "/api/protected-dashboard"
+    },
+    {
+      "source": "/ANDO.html",
+      "destination": "/api/protected-dashboard"
+    },
+    {
+      "source": "/api/_private/:path*",
+      "destination": "/api/private-denied"
+    },
+    {
+      "source": "/api/ai/:path*",
+      "destination": "/api/ai"
+    },
+    {
+      "source": "/app-assets/:path*",
+      "destination": "/api/protected-asset?file=:path*"
+    },
+    {
+      "source": "/reset-password",
+      "destination": "/reset-password.html"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
