@@ -1,8 +1,10 @@
-# These aliases must be served only by api/protected-dashboard.js.
-dashboard.html
-ANDO.html
-site/dashboard.html
-site/ANDO.html
+# These root/site aliases must be served only by api/protected-dashboard.js.
+# Anchor the names at the project root so api/_private/dashboard.html remains
+# available to the protected function bundle.
+/dashboard.html
+/ANDO.html
+/site/dashboard.html
+/site/ANDO.html
 secrets
 .agents
 .git
