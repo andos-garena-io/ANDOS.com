@@ -14483,25 +14483,30 @@ const PLANS = {
         setInterval(function () { try { if (auth.currentUser && !auth.currentUser.isAnonymous && document.getElementById('yuvaGate') && document.getElementById('yuvaGate').classList.contains('yg-on')) { hideGate(); render(); } } catch (e) {} }, 2500);
         var firstEvent = true;
         auth.onAuthStateChanged(function (fbUser) {
-            clearTimeout(__authTimer);
+            /* Do not cancel the persistence safety timer on an early null event.
+               A fresh Google login can briefly report null while the other page's
+               LOCAL persistence is being rehydrated. */
+            if (fbUser) clearTimeout(__authTimer);
             if (!fbUser || fbUser.isAnonymous) {
                 busy(false);
                 showGate();
                 firstEvent = false;
                 if (!window.__andosAuthRedirecting) {
                     window.__andosAuthRedirecting = true;
+                    var wait = recentAuthHandoff() ? 9000 : 1800;
                     setTimeout(function () {
                         if (auth.currentUser) return;
                         if (recentAuthHandoff()) {
                             window.__andosAuthRedirecting = false;
-                            setTimeout(function () { if (!auth.currentUser) location.replace('/'); }, 4000);
+                            setTimeout(redirectIfStillSignedOut, 5000);
                             return;
                         }
-                        location.replace('/');
-                    }, 2500);
+                        redirectIfStillSignedOut();
+                    }, wait);
                 }
                 return;
             }
+            window.__andosAuthRedirecting = false;
             var silent = firstEvent; firstEvent = false;
             if (silent) { hideGate(); }
             var created = fbUser.metadata && fbUser.metadata.creationTime, last = fbUser.metadata && fbUser.metadata.lastSignInTime;

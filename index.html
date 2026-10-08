@@ -1988,8 +1988,11 @@ function showUser(user, silent = false) {
   dashboardRedirectStarted = true;
   const navigateToDashboard = async () => {
     try {
-      if (!auth.currentUser) throw new Error("auth_session_not_ready");
-      await auth.currentUser.getIdToken();
+      /* Firebase has already returned a signed-in user. Token refresh is useful
+         but must never trap a successful login on the login page if the network
+         is briefly slow; the dashboard auth guard remains the final check. */
+      if (!user) throw new Error("auth_session_not_ready");
+      try { await user.getIdToken(); } catch (_) {}
       try { sessionStorage.setItem("andos_auth_handoff", String(Date.now())); } catch (_) {}
       location.replace("/dashboard");
     } catch (e) {
