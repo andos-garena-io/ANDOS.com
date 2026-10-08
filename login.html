@@ -14,10 +14,22 @@ html,body{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%;text-size-adjus
 html.auth-pending .screen,html.auth-pending #toast{visibility:hidden!important}
 </style>
 <script>
-/* If the durable server session is still valid, skip the public login shell
-   before Firebase finishes booting. This is the fast path for app reopen and
-   browser reload; the auth-pending guard remains the Firebase fallback. */
+/* A successful login writes a local marker before dashboard navigation.
+   Use it as the synchronous app-reopen route: go to the protected dashboard
+   first, where the server session is checked/recovered. Logout clears it. */
 (function () {
+  try {
+    var profile = JSON.parse(localStorage.getItem("andos_user") || "null");
+    if (profile && profile.loggedIn === true && location.pathname !== "/dashboard") {
+      window.__andosLocalAuthMarker = true;
+      location.replace("/dashboard");
+      return;
+    }
+  } catch (_) {}
+
+  /* If the durable server session is still valid, skip the public login shell
+     before Firebase finishes booting. This is the fast path for app reopen and
+     browser reload; the auth-pending guard remains the Firebase fallback. */
   window.__andosServerSessionCheck = fetch("/api/session", {
     method: "GET",
     credentials: "same-origin",
