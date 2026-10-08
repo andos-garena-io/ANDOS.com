@@ -1974,30 +1974,48 @@ function showUser(user, silent = false) {
   if (dashboardRedirectStarted) return;
   dashboardRedirectStarted = true;
   const navigateToDashboard = async () => {
-    try {
-      /* Firebase login remains popup/redirect-compatible. Before dashboard
-         navigation, exchange the ID token for the HttpOnly server session. */
-      if (!user) throw new Error("auth_session_not_ready");
-      const idToken = await user.getIdToken();
-      const sessionResponse = await fetch("/api/session", {
-        method: "POST",
-        credentials: "same-origin",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ idToken })
-      });
-      const sessionData = await sessionResponse.json().catch(() => ({}));
-      if (!sessionResponse.ok || !sessionData.ok) {
-        const err = new Error(sessionData.error || "server_session_failed");
-        err.code = sessionData.error || "server_session_failed";
-        throw err;
+    let lastError;
+    /* A popup result and onAuthStateChanged can arrive at the same time. A
+       short retry makes the token-to-server handoff idempotent instead of
+       leaving the user on the login page after the welcome toast. */
+    for (let attempt = 0; attempt < 3; attempt++) {
+      try {
+        /* Firebase login remains popup/redirect-compatible. Before dashboard
+           navigation, exchange the ID token for the HttpOnly server session. */
+        if (!user) throw new Error("auth_session_not_ready");
+        const idToken = await user.getIdToken(attempt > 0);
+        const controller = new AbortController();
+        const abortTimer = setTimeout(() => controller.abort(), 12000);
+        let sessionResponse;
+        try {
+          sessionResponse = await fetch("/api/session", {
+            method: "POST",
+            credentials: "same-origin",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ idToken }),
+            signal: controller.signal
+          });
+        } finally {
+          clearTimeout(abortTimer);
+        }
+        const sessionData = await sessionResponse.json().catch(() => ({}));
+        if (!sessionResponse.ok || !sessionData.ok) {
+          const err = new Error(sessionData.error || "server_session_failed");
+          err.code = sessionData.error || "server_session_failed";
+          throw err;
+        }
+        try { sessionStorage.setItem("andos_auth_handoff", String(Date.now())); } catch (_) {}
+        location.replace("/dashboard");
+        return;
+      } catch (e) {
+        lastError = e;
+        if (attempt < 2) await new Promise(resolve => setTimeout(resolve, 450 * (attempt + 1)));
       }
-      try { sessionStorage.setItem("andos_auth_handoff", String(Date.now())); } catch (_) {}
-      location.replace("/dashboard");
-    } catch (e) {
-      dashboardRedirectStarted = false;
-      busy(false);
-      toast("Login complete nahi hua. Please try again.", "err");
     }
+    dashboardRedirectStarted = false;
+    busy(false);
+    console.error("[auth] dashboard handoff failed", lastError);
+    toast("Login ho gaya, dashboard open nahi hua. Please try again.", "err");
   };
   setTimeout(navigateToDashboard, silent ? 0 : 450);
 }
