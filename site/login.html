@@ -1939,16 +1939,27 @@ btn.addEventListener("click", async () => {
 let redirectResultPending = true;
 let authStateResolved = false;
 let authGuardTimer;
+const hasAuthStateReady = typeof auth.authStateReady === "function";
 function releaseAuthGuard() {
   clearTimeout(authGuardTimer);
   document.documentElement.classList.remove("auth-pending");
 }
 function maybeReleaseAuthGuard() {
   /* Firebase can resolve getRedirectResult before it restores local auth.
-     Keep the login UI hidden until both checks say there is no user. */
-  if (authStateResolved && !redirectResultPending) releaseAuthGuard();
+     Keep the login UI hidden until the SDK's initial state is settled and
+     both checks say there is no user. */
+  if (authStateResolved && !redirectResultPending && !auth.currentUser) releaseAuthGuard();
 }
 authGuardTimer = setTimeout(releaseAuthGuard, 5000);
+if (hasAuthStateReady) {
+  auth.authStateReady().then(() => {
+    authStateResolved = true;
+    maybeReleaseAuthGuard();
+  }).catch(() => {
+    authStateResolved = true;
+    maybeReleaseAuthGuard();
+  });
+}
 
 /* returning from a redirect */
 getRedirectResult(auth)
@@ -1964,7 +1975,7 @@ getRedirectResult(auth)
 
 /* already signed in on this device */
 onAuthStateChanged(auth, user => {
-  authStateResolved = true;
+  if (!hasAuthStateReady) authStateResolved = true;
   busy(false);
   if (user) showUser(user, true);
   else maybeReleaseAuthGuard();
