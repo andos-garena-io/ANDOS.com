@@ -2097,7 +2097,10 @@ function showUser(user, silent = false) {
     console.error("[auth] dashboard handoff failed", lastError);
     toast("Login ho gaya, dashboard open nahi hua. Please try again.", "err");
   };
-  setTimeout(navigateToDashboard, silent ? 0 : 450);
+  /* The Firebase user is already available here from the successful sign-in
+     result. Do not hold the route handoff for a welcome-toast delay; Firebase
+     persistence and the server-session check continue independently. */
+  setTimeout(navigateToDashboard, 0);
 }
 
 function handleError(e) {
