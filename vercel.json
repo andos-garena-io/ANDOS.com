@@ -3,15 +3,15 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/ANDO.html"
+      "destination": "/index.html"
     },
     {
       "source": "/login",
-      "destination": "/login.html"
+      "destination": "/index.html"
     },
     {
       "source": "/dashboard",
-      "destination": "/ANDO.html"
+      "destination": "/dashboard.html"
     },
     {
       "source": "/reset-password",
