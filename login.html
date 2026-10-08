@@ -1878,8 +1878,10 @@ const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 const isEmbeddedBrowser = /FBAN|FBAV|Instagram|Line\/|MicroMessenger|Twitter/i.test(navigator.userAgent);
 const popupFallbackCodes = new Set([
   "auth/popup-blocked",
+  "auth/popup-closed-by-user",
   "auth/operation-not-supported-in-this-environment",
-  "auth/web-storage-unsupported"
+  "auth/web-storage-unsupported",
+  "auth/internal-error"
 ]);
 
 /* Google: popup first, then redirect only when the browser cannot host a popup.
@@ -1893,7 +1895,10 @@ async function startGoogleSignIn() {
     const res = await signInWithPopup(auth, provider);
     showUser(res.user);
   } catch (e) {
-    if (popupFallbackCodes.has(e && e.code) || (isMobile && e && e.code === "auth/popup-closed-by-user")) {
+    /* A browser may close the popup after Google account selection when
+       opener isolation or popup policy blocks the final handoff. Redirect
+       is the reliable second attempt on desktop and mobile alike. */
+    if (popupFallbackCodes.has(e && e.code)) {
       await signInWithRedirect(auth, provider);
       return;
     }
