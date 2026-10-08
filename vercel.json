@@ -2,12 +2,6 @@
   "version": 2,
   "trailingSlash": false,
   "functions": {
-    "api/auth-entry.js": {
-      "includeFiles": [
-        "index.html",
-        "login.html"
-      ]
-    },
     "api/protected-dashboard.js": {
       "includeFiles": "api/_private/dashboard.html"
     },
