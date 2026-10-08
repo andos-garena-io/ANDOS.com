@@ -1,0 +1,2778 @@
+{
+  "jio": [
+    {
+      "id": "jio_199_39",
+      "name": "1.5GB/Day – 18 Days",
+      "price": 39,
+      "mrp": 199,
+      "days": "18 Days",
+      "data": "1.5GB/Day (27GB)",
+      "tag": "🔥 80% OFF",
+      "desc": "MRP ₹199 → ₹39 | SAVE 80% | 1.5GB/Day | Unlimited Calls | 100 SMS/Day | JioTV | No 5G | 18 Days"
+    },
+    {
+      "id": "jio_239_49",
+      "name": "1.5GB/Day – 22 Days",
+      "price": 49,
+      "mrp": 239,
+      "days": "22 Days",
+      "data": "1.5GB/Day (33GB)",
+      "tag": "🔥 79% OFF",
+      "desc": "MRP ₹239 → ₹49 | SAVE 79% | 1.5GB/Day | Unlimited Calls | JioTV | No 5G | 22 Days"
+    },
+    {
+      "id": "jio_299_59",
+      "name": "1.5GB/Day – 28 Days",
+      "price": 59,
+      "mrp": 299,
+      "days": "28 Days",
+      "data": "1.5GB/Day (42GB)",
+      "tag": "🔥 Trending",
+      "desc": "MRP ₹299 → ₹59 | SAVE 80% | 1.5GB/Day | Unlimited Calls | JioTV | No 5G | 28 Days | Bumper Offer"
+    },
+    {
+      "id": "jio_349_69",
+      "name": "2GB/Day – 28 Days – 5G",
+      "price": 69,
+      "mrp": 349,
+      "days": "28 Days",
+      "data": "2GB/Day (56GB) + 5G",
+      "tag": "🏆 Best Buy",
+      "desc": "MRP ₹349 → ₹69 | SAVE 80% | True 5G Unlimited | 2GB/Day + Unlimited 5G | Gemini Pro FREE | India #1"
+    },
+    {
+      "id": "jio_399_79",
+      "name": "2.5GB/Day – 28 Days",
+      "price": 79,
+      "mrp": 399,
+      "days": "28 Days",
+      "data": "2.5GB/Day + 5G",
+      "tag": "⚡ Power",
+      "desc": "MRP ₹399 → ₹79 | SAVE 80% | 2.5GB/Day + Unlimited 5G | Heavy data | 28 Days"
+    },
+    {
+      "id": "jio_579_129",
+      "name": "1.5GB/Day – 56 Days",
+      "price": 129,
+      "mrp": 579,
+      "days": "56 Days",
+      "data": "1.5GB/Day (84GB)",
+      "tag": "💎 Long Term",
+      "desc": "MRP ₹579 → ₹129 | SAVE 77% | 1.5GB/Day | 56 Days Long Term"
+    },
+    {
+      "id": "jio_859_179",
+      "name": "2GB/Day – 84 Days",
+      "price": 179,
+      "mrp": 859,
+      "days": "84 Days",
+      "data": "2GB/Day (168GB) + 5G",
+      "tag": "🔥 Trending",
+      "desc": "MRP ₹859 → ₹179 | SAVE 79% | 2GB/Day + Unlimited 5G | 84 Days Bestseller"
+    },
+    {
+      "id": "jio_1029_249",
+      "name": "2GB/Day + Prime – 84D",
+      "price": 249,
+      "mrp": 1029,
+      "days": "84 Days",
+      "data": "Prime Lite + 5G",
+      "tag": "📦 Prime",
+      "desc": "MRP ₹1029 → ₹249 | SAVE 75% | Amazon Prime Lite | 84 Days"
+    },
+    {
+      "id": "jio_1299_299",
+      "name": "2GB/Day + Netflix – 84D",
+      "price": 299,
+      "mrp": 1299,
+      "days": "84 Days",
+      "data": "Netflix Basic + 5G",
+      "tag": "🎬 Netflix",
+      "desc": "MRP ₹1299 → ₹299 | SAVE 77% | Netflix Basic | 84 Days Premium"
+    },
+    {
+      "id": "jio_3599_599",
+      "name": "2.5GB/Day Annual – 365D",
+      "price": 599,
+      "mrp": 3599,
+      "days": "365 Days",
+      "data": "2.5GB/Day (912GB) + 5G",
+      "tag": "👑 Best Value",
+      "desc": "MRP ₹3599 → ₹599 | SAVE 83% | Annual | 2.5GB/Day + Unlimited 5G | Gemini Pro FREE | ₹1.64/day"
+    }
+  ],
+  "airtel": [
+    {
+      "id": "air_199_39",
+      "name": "2GB Data – 28 Days",
+      "price": 39,
+      "mrp": 199,
+      "days": "28 Days",
+      "data": "2GB Total",
+      "tag": "🔥 80% OFF",
+      "desc": "MRP ₹199 → ₹39 | SAVE 80% | Truly Unlimited Calls | 2GB Data | 100 SMS/Day | 28 Days"
+    },
+    {
+      "id": "air_299_49",
+      "name": "1GB/Day – 28 Days",
+      "price": 49,
+      "mrp": 299,
+      "days": "28 Days",
+      "data": "1GB/Day (28GB)",
+      "tag": "🔥 83% OFF",
+      "desc": "MRP ₹299 → ₹49 | SAVE 83% | 1GB/Day | Unlimited Calls | 28 Days"
+    },
+    {
+      "id": "air_349_69",
+      "name": "1.5GB/Day – 28 Days",
+      "price": 69,
+      "mrp": 349,
+      "days": "28 Days",
+      "data": "1.5GB/Day + 5G",
+      "tag": "🔥 Trending",
+      "desc": "MRP ₹349 → ₹69 | SAVE 80% | 1.5GB/Day + 5G | Unlimited Calls | 28 Days"
+    },
+    {
+      "id": "air_399_79",
+      "name": "2.5GB/Day – 28 Days",
+      "price": 79,
+      "mrp": 399,
+      "days": "28 Days",
+      "data": "2.5GB/Day + 5G",
+      "tag": "🏆 Best Buy",
+      "desc": "MRP ₹399 → ₹79 | SAVE 80% | 2.5GB/Day + 5G | Hotstar | 28 Days Bumper"
+    },
+    {
+      "id": "air_449_99",
+      "name": "3GB/Day – 28 Days",
+      "price": 99,
+      "mrp": 449,
+      "days": "28 Days",
+      "data": "3GB/Day (84GB) + 5G",
+      "tag": "⚡ Power",
+      "desc": "MRP ₹449 → ₹99 | SAVE 78% | 3GB/Day + 5G | OTT Bundle | Power User"
+    },
+    {
+      "id": "air_579_119",
+      "name": "1.5GB/Day – 56 Days",
+      "price": 119,
+      "mrp": 579,
+      "days": "56 Days",
+      "data": "1.5GB/Day (84GB)",
+      "tag": "",
+      "desc": "MRP ₹579 → ₹119 | SAVE 79% | 1.5GB/Day | 56 Days"
+    },
+    {
+      "id": "air_979_199",
+      "name": "2GB/Day – 84 Days",
+      "price": 199,
+      "mrp": 979,
+      "days": "84 Days",
+      "data": "2GB/Day (168GB) + 5G",
+      "tag": "🔥 Trending",
+      "desc": "MRP ₹979 → ₹199 | SAVE 79% | 2GB/Day + 5G | 84 Days Bestseller"
+    },
+    {
+      "id": "air_1029_229",
+      "name": "2GB/Day + Hotstar – 84D",
+      "price": 229,
+      "mrp": 1029,
+      "days": "84 Days",
+      "data": "Hotstar 3mo + 5G",
+      "tag": "🏏 Cricket",
+      "desc": "MRP ₹1029 → ₹229 | SAVE 77% | Hotstar 3 Months | Cricket Season"
+    },
+    {
+      "id": "air_1199_269",
+      "name": "2.5GB/Day + Prime – 84D",
+      "price": 269,
+      "mrp": 1199,
+      "days": "84 Days",
+      "data": "Prime + 5G",
+      "tag": "📦 Prime",
+      "desc": "MRP ₹1199 → ₹269 | SAVE 77% | Amazon Prime | 84 Days"
+    },
+    {
+      "id": "air_3599_599",
+      "name": "2GB/Day Annual – 365D",
+      "price": 599,
+      "mrp": 3599,
+      "days": "365 Days",
+      "data": "2GB/Day (730GB) + 5G",
+      "tag": "👑 Best Value",
+      "desc": "MRP ₹3599 → ₹599 | SAVE 83% | Annual | 2GB/Day + 5G | OTT | ₹1.64/day"
+    }
+  ],
+  "instagram": [
+    {
+      "id": "i_f1k",
+      "name": "1K Followers",
+      "price": 23,
+      "mrp": 50,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "🔥 Trending",
+      "desc": "1,000 real followers | Indian+Global | 0-10 min start | 30-day refill | #1 India Seller | MRP ₹50 → ₹23 | SAVE 54%"
+    },
+    {
+      "id": "i_f10k",
+      "name": "10K Followers",
+      "price": 230,
+      "mrp": 511,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🚀 Mega",
+      "desc": "10K followers mega | 60-day refill | Real profiles | Drip-feed | Influencer ready | MRP ₹511 → ₹230 | SAVE 55%"
+    },
+    {
+      "id": "i_f100k",
+      "name": "100K Followers",
+      "price": 2300,
+      "mrp": 5111,
+      "days": "6-12 Hrs",
+      "data": "100K",
+      "tag": "💎 Premium",
+      "desc": "100K authority pack | Lifetime refill | Real Indian+Global | Gradual drip | Brand deal ready | MRP ₹5,111 → ₹2,300 | SAVE 55%"
+    },
+    {
+      "id": "i_f500k",
+      "name": "500K Followers",
+      "price": 11500,
+      "mrp": 25556,
+      "days": "1-2 Days",
+      "data": "500K",
+      "tag": "👑 Celebrity",
+      "desc": "500K celebrity tier | Lifetime refill | VIP priority | Macro influencer | Sponsorship ready | MRP ₹25,556 → ₹11,500 | SAVE 55%"
+    },
+    {
+      "id": "i_f1m",
+      "name": "1M Followers",
+      "price": 23000,
+      "mrp": 153333,
+      "days": "2-4 Days",
+      "data": "1M",
+      "tag": "⭐ Mega Star",
+      "desc": "1 Million followers | Lifetime refill | VIP manager | Brand deals guaranteed | MRP ₹153,333 → ₹23,000 | SAVE 85% ⚡"
+    },
+    {
+      "id": "i_f10m",
+      "name": "10M Followers",
+      "price": 230000,
+      "mrp": 2300000,
+      "days": "5-10 Days",
+      "data": "10M",
+      "tag": "🌟 Legend",
+      "desc": "10 Million followers | India top tier | Dedicated manager | Enterprise grade | MRP ₹2,300,000 → ₹2,30,000 | SAVE 90% KHATARNAK! ⚡"
+    },
+    {
+      "id": "i_l1k",
+      "name": "1K Likes",
+      "price": 9,
+      "mrp": 20,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 post/reel likes | Spread across posts | Instant | 30-day refill | MRP ₹20 → ₹9 | SAVE 55%"
+    },
+    {
+      "id": "i_l10k",
+      "name": "10K Likes",
+      "price": 90,
+      "mrp": 200,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Viral",
+      "desc": "10K likes viral pack | All posts | High retention | Algorithm boost | 30-day refill | MRP ₹200 → ₹90 | SAVE 55%"
+    },
+    {
+      "id": "i_l100k",
+      "name": "100K Likes",
+      "price": 899,
+      "mrp": 5993,
+      "days": "2-4 Hrs",
+      "data": "100K",
+      "tag": "🚀 Super Viral",
+      "desc": "100K likes mega | Trending ready | 60-day refill | Influencer favorite | MRP ₹5,993 → ₹899 | SAVE 85% ⚡"
+    },
+    {
+      "id": "i_rv10k",
+      "name": "10K Reel Views",
+      "price": 2,
+      "mrp": 4,
+      "days": "Instant",
+      "data": "10K Views",
+      "tag": "",
+      "desc": "10,000 reel views | High retention | Instant | 30-day refill | MRP ₹4 → ₹2 | SAVE 50%"
+    },
+    {
+      "id": "i_rv100k",
+      "name": "100K Reel Views",
+      "price": 20,
+      "mrp": 44,
+      "days": "0-2 Hrs",
+      "data": "100K Views",
+      "tag": "🔥 Trending",
+      "desc": "100K reel views | High retention | Viral ready | Algorithm boost | 30-day refill | MRP ₹44 → ₹20 | SAVE 55%"
+    },
+    {
+      "id": "i_rv1m",
+      "name": "1M Reel Views",
+      "price": 199,
+      "mrp": 1327,
+      "days": "2-4 Hrs",
+      "data": "1M Views",
+      "tag": "🚀 Viral Blast",
+      "desc": "1 Million reel views | Trending guaranteed | India+Global | 30-day refill | MRP ₹1,327 → ₹199 | SAVE 85% ⚡"
+    },
+    {
+      "id": "i_rv10m",
+      "name": "10M Reel Views",
+      "price": 1999,
+      "mrp": 19990,
+      "days": "4-8 Hrs",
+      "data": "10M Views",
+      "tag": "🌟 Mega Viral",
+      "desc": "10 Million reel views | Algorithm dominance | Enterprise grade | MRP ₹19,990 → ₹1,999 | SAVE 90% KHATARNAK! ⚡"
+    },
+    {
+      "id": "i_c500",
+      "name": "500 Comments",
+      "price": 25,
+      "mrp": 56,
+      "days": "1-2 Hrs",
+      "data": "Custom",
+      "tag": "",
+      "desc": "500 custom comments (Hindi/English) | Real-looking | 30-day refill | MRP ₹56 → ₹25 | SAVE 55%"
+    },
+    {
+      "id": "i_c5k",
+      "name": "5K Comments",
+      "price": 199,
+      "mrp": 442,
+      "days": "2-4 Hrs",
+      "data": "5K Custom",
+      "tag": "💬 Engage",
+      "desc": "5,000 custom comments | Hindi+English | All posts | 30-day refill | MRP ₹442 → ₹199 | SAVE 55%"
+    },
+    {
+      "id": "i_sv10k",
+      "name": "10K Story Views",
+      "price": 5,
+      "mrp": 11,
+      "days": "Instant",
+      "data": "10K Views",
+      "tag": "",
+      "desc": "10,000 story views | Instant | Real-looking | 30-day refill | MRP ₹11 → ₹5 | SAVE 55%"
+    },
+    {
+      "id": "i_sv100k",
+      "name": "100K Story Views",
+      "price": 49,
+      "mrp": 109,
+      "days": "1-2 Hrs",
+      "data": "100K Views",
+      "tag": "📱 Stories",
+      "desc": "100K story views mega | Real-looking | Gradual | 30-day refill | MRP ₹109 → ₹49 | SAVE 55%"
+    }
+  ],
+  "youtube": [
+    {
+      "id": "y_s100",
+      "name": "100 Subscribers",
+      "price": 29,
+      "mrp": 64,
+      "days": "1-2 Days",
+      "data": "100 Subs",
+      "tag": "",
+      "desc": "100 organic subs | High retention | 60-day refill | Safe drip | Kickstart channel | MRP ₹64 → ₹29 | SAVE 55%"
+    },
+    {
+      "id": "y_s500",
+      "name": "500 Subscribers",
+      "price": 145,
+      "mrp": 322,
+      "days": "2-4 Days",
+      "data": "500 Subs",
+      "tag": "🔥 Trending",
+      "desc": "500 subs | 50-100/day drip | Lifetime refill | Real profiles | #1 Seller | MRP ₹322 → ₹145 | SAVE 55%"
+    },
+    {
+      "id": "y_s1k",
+      "name": "1K Subscribers",
+      "price": 290,
+      "mrp": 644,
+      "days": "4-7 Days",
+      "data": "1K Subs",
+      "tag": "💰 Monetize",
+      "desc": "1,000 subs — YPP eligible! | 100-200/day drip | 60-day refill | Real accounts | MRP ₹644 → ₹290 | SAVE 55%"
+    },
+    {
+      "id": "y_s10k",
+      "name": "10K Subscribers",
+      "price": 2900,
+      "mrp": 19333,
+      "days": "10-20 Days",
+      "data": "10K Subs",
+      "tag": "👑 Authority",
+      "desc": "10K subs | Gradual drip | Lifetime refill | Brand deal ready | MRP ₹19,333 → ₹2,900 | SAVE 85% ⚡"
+    },
+    {
+      "id": "y_s100k",
+      "name": "100K Subscribers",
+      "price": 29000,
+      "mrp": 290000,
+      "days": "20-40 Days",
+      "data": "100K Subs",
+      "tag": "⭐ Silver Play",
+      "desc": "100K — Silver Play Button | Lifetime refill | VIP priority | Creator level | MRP ₹290,000 → ₹29,000 | SAVE 90% ⚡"
+    },
+    {
+      "id": "y_v1k",
+      "name": "1K Views",
+      "price": 1,
+      "mrp": 2,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 high-retention views | 70-90% retention | Instant | SEO boost | 30-day refill | MRP ₹2 → ₹1 | SAVE 50% 💎"
+    },
+    {
+      "id": "y_v10k",
+      "name": "10K Views",
+      "price": 10,
+      "mrp": 22,
+      "days": "0-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Trending",
+      "desc": "10K views | High retention | SEO+Algorithm boost | 30-day refill | Best for new videos | MRP ₹22 → ₹10 | SAVE 55%"
+    },
+    {
+      "id": "y_v100k",
+      "name": "100K Views",
+      "price": 100,
+      "mrp": 667,
+      "days": "1-2 Days",
+      "data": "100K",
+      "tag": "🚀 Viral",
+      "desc": "100K views viral pack | Trending ready | Algorithm dominance | 30-day refill | MRP ₹667 → ₹100 | SAVE 85% ⚡"
+    },
+    {
+      "id": "y_v1m",
+      "name": "1M Views",
+      "price": 999,
+      "mrp": 9990,
+      "days": "2-4 Days",
+      "data": "1M",
+      "tag": "🌟 Mega Viral",
+      "desc": "1 Million views | Trending guaranteed | Global audience | 30-day refill | MRP ₹9,990 → ₹999 | SAVE 90% ⚡"
+    },
+    {
+      "id": "y_wh1k",
+      "name": "1K Watch Hours",
+      "price": 999,
+      "mrp": 2220,
+      "days": "7-15 Days",
+      "data": "1,000 Hrs",
+      "tag": "",
+      "desc": "1,000 watch hours | ₹1/hr — cheapest in India! | High retention | YPP progress | Lifetime refill | MRP ₹2,220 → ₹999 | SAVE 55%"
+    },
+    {
+      "id": "y_wh4k",
+      "name": "4K Watch Hours",
+      "price": 3499,
+      "mrp": 7776,
+      "days": "14-30 Days",
+      "data": "4,000 Hrs",
+      "tag": "💎 YPP Ready",
+      "desc": "4,000 hrs — Full YPP Monetization! | ₹0.87/hr — unbeatable! | 70-90% retention | Safe gradual | Lifetime refill | MRP ₹7,776 → ₹3,499 | SAVE 55%"
+    },
+    {
+      "id": "y_lk1k",
+      "name": "1K Likes",
+      "price": 12,
+      "mrp": 27,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 video likes | Real-looking | Instant | SEO boost | 30-day refill | MRP ₹27 → ₹12 | SAVE 55%"
+    },
+    {
+      "id": "y_lk10k",
+      "name": "10K Likes",
+      "price": 120,
+      "mrp": 267,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Trending",
+      "desc": "10K likes | High retention | Algorithm boost | 30-day refill | MRP ₹267 → ₹120 | SAVE 55%"
+    },
+    {
+      "id": "y_c500",
+      "name": "500 Comments",
+      "price": 25,
+      "mrp": 56,
+      "days": "1-2 Hrs",
+      "data": "Custom",
+      "tag": "",
+      "desc": "500 custom comments (Hindi/English) | Real-looking | 30-day refill | MRP ₹56 → ₹25 | SAVE 55%"
+    },
+    {
+      "id": "y_c5k",
+      "name": "5K Comments",
+      "price": 199,
+      "mrp": 442,
+      "days": "2-4 Hrs",
+      "data": "5K Custom",
+      "tag": "💬 Engage",
+      "desc": "5,000 custom comments | Hindi+English | All videos | 30-day refill | MRP ₹442 → ₹199 | SAVE 55%"
+    }
+  ],
+  "facebook": [
+    {
+      "id": "f_pl1k",
+      "name": "1K Page Likes",
+      "price": 19,
+      "mrp": 42,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 page likes | Real profiles | Instant | 30-day refill | Page starter | MRP ₹42 → ₹19 | SAVE 55%"
+    },
+    {
+      "id": "f_pl10k",
+      "name": "10K Page Likes",
+      "price": 190,
+      "mrp": 422,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Trending",
+      "desc": "10K page likes | Non-drop | Lifetime refill | Gradual | #1 Seller | MRP ₹422 → ₹190 | SAVE 55%"
+    },
+    {
+      "id": "f_pl100k",
+      "name": "100K Page Likes",
+      "price": 1900,
+      "mrp": 12667,
+      "days": "4-8 Hrs",
+      "data": "100K",
+      "tag": "👑 Authority",
+      "desc": "100K likes mega | Lifetime refill | Real Indian | Brand authority | MRP ₹12,667 → ₹1,900 | SAVE 85% ⚡"
+    },
+    {
+      "id": "f_pl1m",
+      "name": "1M Page Likes",
+      "price": 19000,
+      "mrp": 190000,
+      "days": "1-2 Days",
+      "data": "1M",
+      "tag": "⭐ Verified",
+      "desc": "1 Million likes | Lifetime refill | VIP priority | Enterprise grade | MRP ₹190,000 → ₹19,000 | SAVE 90% ⚡"
+    },
+    {
+      "id": "f_fr1k",
+      "name": "1K Followers",
+      "price": 29,
+      "mrp": 64,
+      "days": "1-2 Hrs",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 profile followers | Real-looking | 30-day refill | Profile boost | MRP ₹64 → ₹29 | SAVE 55%"
+    },
+    {
+      "id": "f_fr10k",
+      "name": "10K Followers",
+      "price": 290,
+      "mrp": 644,
+      "days": "2-4 Hrs",
+      "data": "10K",
+      "tag": "🔥 Trending",
+      "desc": "10K followers | Lifetime refill | Real accounts | Influencer level | MRP ₹644 → ₹290 | SAVE 55%"
+    },
+    {
+      "id": "f_pt1k",
+      "name": "1K Post Likes",
+      "price": 9,
+      "mrp": 20,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 post likes | Instant | 30-day refill | Engagement boost | MRP ₹20 → ₹9 | SAVE 55%"
+    },
+    {
+      "id": "f_pt10k",
+      "name": "10K Post Likes",
+      "price": 90,
+      "mrp": 200,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Viral",
+      "desc": "10K post likes | All posts | High retention | 30-day refill | MRP ₹200 → ₹90 | SAVE 55%"
+    },
+    {
+      "id": "f_pt100k",
+      "name": "100K Post Likes",
+      "price": 899,
+      "mrp": 5993,
+      "days": "2-4 Hrs",
+      "data": "100K",
+      "tag": "🚀 Super Viral",
+      "desc": "100K likes mega | Algorithm dominance | 30-day refill | Pro grade | MRP ₹5,993 → ₹899 | SAVE 85% ⚡"
+    },
+    {
+      "id": "f_sh1k",
+      "name": "1K Shares",
+      "price": 29,
+      "mrp": 64,
+      "days": "1-2 Hrs",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 post shares | Viral spread | 30-day refill | MRP ₹64 → ₹29 | SAVE 55%"
+    },
+    {
+      "id": "f_sh10k",
+      "name": "10K Shares",
+      "price": 249,
+      "mrp": 553,
+      "days": "2-4 Hrs",
+      "data": "10K",
+      "tag": "🚀 Viral",
+      "desc": "10K shares mega | Viral spread | All posts | 30-day refill | MRP ₹553 → ₹249 | SAVE 55%"
+    }
+  ],
+  "freefire": [
+    {
+      "id": "ff_50_10",
+      "name": "50 Diamonds Pack",
+      "price": 10,
+      "mrp": 40,
+      "days": "Instant",
+      "data": "50 Diamonds",
+      "tag": "Starter Deal",
+      "desc": "Original price ₹40 | Deal price ₹10 | Save 75% | Direct Player ID top-up"
+    },
+    {
+      "id": "ff_100_20",
+      "name": "100 Diamonds Pack",
+      "price": 20,
+      "mrp": 80,
+      "days": "Instant",
+      "data": "100 Diamonds",
+      "tag": "Value Deal",
+      "desc": "Original price ₹80 | Deal price ₹20 | Save 75% | Direct Player ID top-up"
+    },
+    {
+      "id": "ff_310_60",
+      "name": "310 Diamonds Pack",
+      "price": 60,
+      "mrp": 240,
+      "days": "Instant",
+      "data": "310 Diamonds",
+      "tag": "Trending",
+      "desc": "Original price ₹240 | Deal price ₹60 | Save 75% | Popular diamond pack"
+    },
+    {
+      "id": "ff_520_100",
+      "name": "520 Diamonds Pack",
+      "price": 100,
+      "mrp": 400,
+      "days": "Instant",
+      "data": "520 Diamonds",
+      "tag": "Best Seller",
+      "desc": "Original price ₹400 | Deal price ₹100 | Save 75% | Direct Player ID top-up"
+    },
+    {
+      "id": "ff_240_40",
+      "name": "240 Diamonds Pack",
+      "price": 40,
+      "mrp": 190,
+      "days": "Instant",
+      "data": "240 Diamonds",
+      "tag": "Hot Deal",
+      "desc": "Original price ₹190 | Deal price ₹40 | Save 79% | Direct Player ID top-up"
+    },
+    {
+      "id": "ff_680_120",
+      "name": "680 Diamonds Pack",
+      "price": 120,
+      "mrp": 545,
+      "days": "Instant",
+      "data": "680 Diamonds",
+      "tag": "Gamer Choice",
+      "desc": "Original price ₹545 | Deal price ₹120 | Save 78% | Best mid-tier value pack"
+    },
+    {
+      "id": "ff_2600_429",
+      "name": "2,600 Diamonds Super Pack",
+      "price": 429,
+      "mrp": 2080,
+      "days": "Instant",
+      "data": "2,600 Diamonds",
+      "tag": "Super Saver",
+      "desc": "Original price ₹2,080 | Deal price ₹429 | Save 79% | Massive value bundle"
+    },
+    {
+      "id": "ff_1060_200",
+      "name": "1,060 Diamonds Pack",
+      "price": 200,
+      "mrp": 800,
+      "days": "Instant",
+      "data": "1,060 Diamonds",
+      "tag": "Pro Deal",
+      "desc": "Original price ₹800 | Deal price ₹200 | Save 75% | 1,060 Diamonds"
+    },
+    {
+      "id": "ff_2180_399",
+      "name": "2,180 Diamonds Beast Pack",
+      "price": 399,
+      "mrp": 1600,
+      "days": "Instant",
+      "data": "2,180 Diamonds",
+      "tag": "Beast Deal",
+      "desc": "Original price ₹1,600 | Deal price ₹399 | Massive diamond value"
+    },
+    {
+      "id": "ff_5600_699",
+      "name": "5,600 Diamonds Monster Pack",
+      "price": 699,
+      "mrp": 4000,
+      "days": "Instant",
+      "data": "5,600 Diamonds",
+      "tag": "Monster Deal",
+      "desc": "Original price ₹4,000 | Deal price ₹699 | Limited mega value pack"
+    },
+    {
+      "id": "ff_12000_999",
+      "name": "12,000 Diamonds Mega Pack",
+      "price": 999,
+      "mrp": 9600,
+      "days": "Instant",
+      "data": "12,000 Diamonds",
+      "tag": "Unbelievable Mega Deal",
+      "desc": "Original price ₹9,600 | Mega deal price ₹999 | High-value promotional pack"
+    },
+    {
+      "id": "ff_25000_1999",
+      "name": "25,000 Diamonds Titan Pack",
+      "price": 1999,
+      "mrp": 20000,
+      "days": "Instant",
+      "data": "25,000 Diamonds",
+      "tag": "Titan Deal",
+      "desc": "Original price ₹20,000 | Titan deal price ₹1,999 | Large promotional bundle"
+    },
+    {
+      "id": "ff_50000_3499",
+      "name": "50,000 Diamonds Legend Pack",
+      "price": 3499,
+      "mrp": 40000,
+      "days": "Instant",
+      "data": "50,000 Diamonds",
+      "tag": "Legend Deal",
+      "desc": "Original price ₹40,000 | Legend deal price ₹3,499 | Maximum promotional bundle"
+    },
+    {
+      "id": "ff_weeklylite_19",
+      "name": "Weekly Lite",
+      "price": 19,
+      "mrp": 50,
+      "days": "7 Days",
+      "data": "Weekly Lite Membership",
+      "tag": "Lite Deal",
+      "desc": "Original price ₹50 | Lite price ₹19 | Save 62% | 7-day lite membership benefits"
+    },
+    {
+      "id": "ff_weekly_69",
+      "name": "Weekly Membership",
+      "price": 69,
+      "mrp": 159,
+      "days": "7 Days",
+      "data": "Weekly Membership",
+      "tag": "Weekly Deal",
+      "desc": "Original price ₹159 | Membership price ₹69 | Daily claim benefits"
+    },
+    {
+      "id": "ff_monthly_299",
+      "name": "Monthly Membership",
+      "price": 299,
+      "mrp": 799,
+      "days": "30 Days",
+      "data": "Monthly Membership",
+      "tag": "Monthly Deal",
+      "desc": "Original price ₹799 | Membership price ₹299 | Daily claim benefits"
+    }
+  ],
+  "redeem": [
+    {
+      "id": "r120_40",
+      "name": "₹120 Play Credit – Promo Pack",
+      "price": 40,
+      "mrp": 120,
+      "days": "Instant Email",
+      "data": "₹120 Gift Card",
+      "tag": "🔥 70% OFF",
+      "desc": "₹120 Google Play redeem | MRP ₹133 → ₹40 | SAVE 70% | Instant email | Min 5 qty for ₹200"
+    },
+    {
+      "id": "r100_29",
+      "name": "₹100 Google Play Code",
+      "price": 29,
+      "mrp": 100,
+      "days": "Instant Email",
+      "data": "₹100 Gift Card",
+      "tag": "🔥 Best Seller",
+      "desc": "MRP ₹100 → ₹29 | SAVE 71% | Instant email 0-60s | UPI verified | 75% OFF applied"
+    },
+    {
+      "id": "r200_59",
+      "name": "₹200 Google Play Code",
+      "price": 59,
+      "mrp": 200,
+      "days": "Instant Email",
+      "data": "₹200 Gift Card",
+      "tag": "⚡ Value",
+      "desc": "MRP ₹200 → ₹59 | SAVE 70% | Email + SMS | 24/7 auto delivery"
+    },
+    {
+      "id": "r500_149",
+      "name": "₹500 Google Play Code",
+      "price": 149,
+      "mrp": 500,
+      "days": "Instant Email",
+      "data": "₹500 Gift Card",
+      "tag": "💎 Best Value",
+      "desc": "MRP ₹500 → ₹149 | SAVE 70% | Instant email | PAN India | No GST | #1 Value"
+    },
+    {
+      "id": "r1000_299",
+      "name": "₹1,000 Google Play Code",
+      "price": 299,
+      "mrp": 1000,
+      "days": "Instant Email",
+      "data": "₹1000 Gift Card",
+      "tag": "🚀 Mega",
+      "desc": "MRP ₹1000 → ₹299 | SAVE 70% | Instant | Official codes | Premium"
+    },
+    {
+      "id": "r2000_599",
+      "name": "₹2,000 Google Play Code",
+      "price": 599,
+      "mrp": 2000,
+      "days": "Instant Email",
+      "data": "₹2000 Gift Card",
+      "tag": "👑 Ultimate",
+      "desc": "MRP ₹2000 → ₹599 | SAVE 70% | Instant delivery | Invoice available"
+    },
+    {
+      "id": "r5000_1499",
+      "name": "₹5,000 Google Play Code",
+      "price": 1499,
+      "mrp": 5000,
+      "days": "Instant Email",
+      "data": "₹5000 Gift Card",
+      "tag": "🌟 Mega Saver",
+      "desc": "MRP ₹5000 → ₹1499 | SAVE 70% | Priority 0-30s | B2B | Extreme slash"
+    },
+    {
+      "id": "r_custom_promo",
+      "name": "Custom Amount (₹200-5000)",
+      "price": 200,
+      "mrp": 200,
+      "days": "Instant",
+      "data": "Custom Gift",
+      "tag": "⚙️ Custom",
+      "desc": "Enter custom amount min ₹200 | 70% OFF anchor applied | Instant email | Custom Redeem"
+    }
+  ],
+  "amazon": [
+    {
+      "id": "am1",
+      "name": "1 Month Prime",
+      "price": 299,
+      "mrp": 299,
+      "days": "30 Days",
+      "data": "Video + Music",
+      "tag": "",
+      "desc": "Full Prime benefits 30 days | Prime Video + Music + Free Delivery | 1 screen | Official"
+    },
+    {
+      "id": "am2",
+      "name": "3 Month Prime",
+      "price": 799,
+      "mrp": 799,
+      "days": "90 Days",
+      "data": "Save ₹98",
+      "tag": "",
+      "desc": "Quarterly Prime subscription | Prime Video, Music, Gaming, Reading | Save vs monthly"
+    },
+    {
+      "id": "am3",
+      "name": "1 Year Prime",
+      "price": 1499,
+      "mrp": 1499,
+      "days": "365 Days",
+      "data": "Best Value",
+      "tag": "",
+      "desc": "Annual Prime maximum savings | Prime Video 4K, Music, Free same-day delivery, Prime Reading, Gaming | 365 days"
+    },
+    {
+      "id": "am4",
+      "name": "Prime Video Mobile",
+      "price": 149,
+      "mrp": 149,
+      "days": "30 Days",
+      "data": "Streaming Only",
+      "tag": "",
+      "desc": "Prime Video Mobile Edition | 720p | 1 mobile device | 30 days"
+    },
+    {
+      "id": "am5",
+      "name": "Prime Shopping",
+      "price": 129,
+      "mrp": 129,
+      "days": "30 Days",
+      "data": "Free Delivery",
+      "tag": "",
+      "desc": "Free delivery + deals access | Prime Early Access | 30 days"
+    },
+    {
+      "id": "am6",
+      "name": "Prime Student",
+      "price": 999,
+      "mrp": 999,
+      "days": "365 Days",
+      "data": "Student Offer",
+      "tag": "",
+      "desc": "Special student pricing | Full Prime 1 year | Student ID verified"
+    }
+  ],
+  "vi": [
+    {
+      "id": "vi_299",
+      "name": "1GB/Day – 28 Days",
+      "price": 299,
+      "mrp": 299,
+      "days": "28 Days",
+      "data": "1GB/Day (28GB)",
+      "tag": "",
+      "desc": "1GB/Day | Unlimited Calls | 100 SMS/Day | Vi Movies & TV | 28 Days"
+    },
+    {
+      "id": "vi_349",
+      "name": "1.5GB/Day – 28 Days",
+      "price": 349,
+      "mrp": 349,
+      "days": "28 Days",
+      "data": "1.5GB/Day (42GB)",
+      "tag": "🔥 Trending",
+      "desc": "1.5GB/Day + 5G | Unlimited Calls | 100 SMS/Day | Vi Movies & TV | 28 Days"
+    },
+    {
+      "id": "vi_399",
+      "name": "2GB/Day – 28 Days",
+      "price": 399,
+      "mrp": 399,
+      "days": "28 Days",
+      "data": "2GB/Day (56GB)",
+      "tag": "🏆 Best Buy",
+      "desc": "2GB/Day + 5G | Unlimited Calls | 100 SMS/Day | Vi Movies & TV | 28 Days"
+    },
+    {
+      "id": "vi_449",
+      "name": "3GB/Day – 28 Days",
+      "price": 449,
+      "mrp": 449,
+      "days": "28 Days",
+      "data": "3GB/Day (84GB)",
+      "tag": "⚡ Power",
+      "desc": "3GB/Day + 5G | Unlimited Calls | 100 SMS/Day | 28 Days"
+    },
+    {
+      "id": "vi_599",
+      "name": "1.5GB/Day – 56 Days",
+      "price": 599,
+      "mrp": 599,
+      "days": "56 Days",
+      "data": "1.5GB/Day (84GB)",
+      "tag": "",
+      "desc": "1.5GB/Day | Unlimited Calls | 100 SMS/Day | 56 Days"
+    },
+    {
+      "id": "vi_719",
+      "name": "2GB/Day – 56 Days",
+      "price": 719,
+      "mrp": 719,
+      "days": "56 Days",
+      "data": "2GB/Day (112GB)",
+      "tag": "",
+      "desc": "2GB/Day + 5G | Unlimited Calls | 100 SMS/Day | 56 Days"
+    },
+    {
+      "id": "vi_839",
+      "name": "1.5GB/Day – 84 Days",
+      "price": 839,
+      "mrp": 839,
+      "days": "84 Days",
+      "data": "1.5GB/Day (126GB)",
+      "tag": "",
+      "desc": "1.5GB/Day | Unlimited Calls | 100 SMS/Day | 84 Days"
+    },
+    {
+      "id": "vi_999",
+      "name": "2GB/Day – 84 Days",
+      "price": 999,
+      "mrp": 999,
+      "days": "84 Days",
+      "data": "2GB/Day (168GB)",
+      "tag": "🔥 Trending",
+      "desc": "2GB/Day + 5G | Unlimited Calls | 100 SMS/Day | 84 Days"
+    },
+    {
+      "id": "vi_2899",
+      "name": "2GB/Day Annual – 365D",
+      "price": 2899,
+      "mrp": 2899,
+      "days": "365 Days",
+      "data": "2GB/Day (730GB)",
+      "tag": "👑 Best Value",
+      "desc": "2GB/Day + 5G | Unlimited Calls | Vi Movies & TV | 365 Days | ₹7.94/day"
+    }
+  ],
+  "bsnl": [
+    {
+      "id": "bsnl_98",
+      "name": "2GB/Day – 15 Days",
+      "price": 98,
+      "mrp": 98,
+      "days": "15 Days",
+      "data": "2GB/Day (30GB)",
+      "tag": "",
+      "desc": "2GB/Day | Unlimited Calls | 100 SMS/Day | 15 Days | Budget pack"
+    },
+    {
+      "id": "bsnl_147",
+      "name": "10GB – 30 Days",
+      "price": 147,
+      "mrp": 147,
+      "days": "30 Days",
+      "data": "10GB Total",
+      "tag": "",
+      "desc": "10GB Data | Unlimited Calls | 100 SMS/Day | 30 Days | Light use"
+    },
+    {
+      "id": "bsnl_198",
+      "name": "2GB/Day – 40 Days",
+      "price": 198,
+      "mrp": 198,
+      "days": "40 Days",
+      "data": "2GB/Day (80GB)",
+      "tag": "🔥 Trending",
+      "desc": "2GB/Day | Unlimited Calls | 100 SMS/Day | 40 Days | Best seller"
+    },
+    {
+      "id": "bsnl_247",
+      "name": "3GB/Day – 40 Days",
+      "price": 247,
+      "mrp": 247,
+      "days": "40 Days",
+      "data": "3GB/Day (120GB)",
+      "tag": "⚡ Power",
+      "desc": "3GB/Day | Unlimited Calls | 100 SMS/Day | 40 Days"
+    },
+    {
+      "id": "bsnl_397",
+      "name": "2GB/Day – 90 Days",
+      "price": 397,
+      "mrp": 397,
+      "days": "90 Days",
+      "data": "2GB/Day (180GB)",
+      "tag": "🏆 Best Buy",
+      "desc": "2GB/Day | Unlimited Calls | 100 SMS/Day | 90 Days | ₹4.41/day"
+    },
+    {
+      "id": "bsnl_497",
+      "name": "3GB/Day – 90 Days",
+      "price": 497,
+      "mrp": 497,
+      "days": "90 Days",
+      "data": "3GB/Day (270GB)",
+      "tag": "",
+      "desc": "3GB/Day | Unlimited Calls | 100 SMS/Day | 90 Days"
+    },
+    {
+      "id": "bsnl_998",
+      "name": "3GB/Day – 180 Days",
+      "price": 998,
+      "mrp": 998,
+      "days": "180 Days",
+      "data": "3GB/Day (540GB)",
+      "tag": "💎 Long Term",
+      "desc": "3GB/Day | Unlimited Calls | 100 SMS/Day | 180 Days | ₹5.54/day"
+    },
+    {
+      "id": "bsnl_1999",
+      "name": "3GB/Day – 365 Days",
+      "price": 1999,
+      "mrp": 1999,
+      "days": "365 Days",
+      "data": "3GB/Day (1095GB)",
+      "tag": "👑 Best Value",
+      "desc": "3GB/Day | Unlimited Calls | 100 SMS/Day | 365 Days | ₹5.48/day"
+    }
+  ],
+  "twitter": [
+    {
+      "id": "tw_f1k",
+      "name": "1K Followers",
+      "price": 29,
+      "mrp": 64,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 followers | Real profiles | Instant | 30-day refill | MRP ₹64 → ₹29 | SAVE 55%"
+    },
+    {
+      "id": "tw_f10k",
+      "name": "10K Followers",
+      "price": 249,
+      "mrp": 553,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Trending",
+      "desc": "10K followers | Non-drop | Lifetime refill | Gradual | MRP ₹553 → ₹249 | SAVE 55%"
+    },
+    {
+      "id": "tw_f100k",
+      "name": "100K Followers",
+      "price": 2299,
+      "mrp": 15327,
+      "days": "4-8 Hrs",
+      "data": "100K",
+      "tag": "👑 Authority",
+      "desc": "100K followers | Lifetime refill | Real Indian | Brand authority | MRP ₹15,327 → ₹2,299 | SAVE 85% ⚡"
+    },
+    {
+      "id": "tw_l1k",
+      "name": "1K Likes",
+      "price": 15,
+      "mrp": 33,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 tweet likes | Instant | 30-day refill | MRP ₹33 → ₹15 | SAVE 55%"
+    },
+    {
+      "id": "tw_l10k",
+      "name": "10K Likes",
+      "price": 129,
+      "mrp": 287,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Viral",
+      "desc": "10K likes | All tweets | High retention | 30-day refill | MRP ₹287 → ₹129 | SAVE 55%"
+    },
+    {
+      "id": "tw_rt500",
+      "name": "500 Retweets",
+      "price": 49,
+      "mrp": 109,
+      "days": "Instant",
+      "data": "500 RT",
+      "tag": "",
+      "desc": "500 retweets | Viral spread | 30-day refill | MRP ₹109 → ₹49 | SAVE 55%"
+    },
+    {
+      "id": "tw_rt5k",
+      "name": "5K Retweets",
+      "price": 449,
+      "mrp": 998,
+      "days": "2-4 Hrs",
+      "data": "5K RT",
+      "tag": "🚀 Viral",
+      "desc": "5K retweets | Viral spread | All tweets | 30-day refill | MRP ₹998 → ₹449 | SAVE 55%"
+    },
+    {
+      "id": "tw_v10k",
+      "name": "10K Views",
+      "price": 19,
+      "mrp": 42,
+      "days": "Instant",
+      "data": "10K Views",
+      "tag": "",
+      "desc": "10K tweet views | Instant | 30-day refill | MRP ₹42 → ₹19 | SAVE 55%"
+    },
+    {
+      "id": "tw_v100k",
+      "name": "100K Views",
+      "price": 169,
+      "mrp": 376,
+      "days": "1-2 Hrs",
+      "data": "100K Views",
+      "tag": "🔥 Trending",
+      "desc": "100K views | Trending ready | 30-day refill | MRP ₹376 → ₹169 | SAVE 55%"
+    }
+  ],
+  "telegram": [
+    {
+      "id": "tg_m100",
+      "name": "100 Members",
+      "price": 49,
+      "mrp": 109,
+      "days": "1-2 Hrs",
+      "data": "100 Members",
+      "tag": "",
+      "desc": "100 real members | Indian+Global | 1-2 hrs start | 30-day refill | MRP ₹109 → ₹49 | SAVE 55%"
+    },
+    {
+      "id": "tg_m1k",
+      "name": "1K Members",
+      "price": 399,
+      "mrp": 887,
+      "days": "4-8 Hrs",
+      "data": "1K Members",
+      "tag": "🔥 Trending",
+      "desc": "1,000 members | 60-day refill | Real profiles | Group boost | MRP ₹887 → ₹399 | SAVE 55%"
+    },
+    {
+      "id": "tg_m10k",
+      "name": "10K Members",
+      "price": 3499,
+      "mrp": 23327,
+      "days": "1-2 Days",
+      "data": "10K Members",
+      "tag": "🚀 Mega",
+      "desc": "10K members | Lifetime refill | Gradual add | Community ready | MRP ₹23,327 → ₹3,499 | SAVE 85% ⚡"
+    },
+    {
+      "id": "tg_v1k",
+      "name": "1K Views",
+      "price": 9,
+      "mrp": 20,
+      "days": "Instant",
+      "data": "1K Views",
+      "tag": "",
+      "desc": "1,000 post views | Instant | 30-day refill | MRP ₹20 → ₹9 | SAVE 55%"
+    },
+    {
+      "id": "tg_v10k",
+      "name": "10K Views",
+      "price": 79,
+      "mrp": 176,
+      "days": "0-2 Hrs",
+      "data": "10K Views",
+      "tag": "🔥 Trending",
+      "desc": "10K views | High retention | Channel boost | 30-day refill | MRP ₹176 → ₹79 | SAVE 55%"
+    },
+    {
+      "id": "tg_v100k",
+      "name": "100K Views",
+      "price": 699,
+      "mrp": 4660,
+      "days": "2-4 Hrs",
+      "data": "100K Views",
+      "tag": "🚀 Viral",
+      "desc": "100K views | Trending ready | 30-day refill | MRP ₹4,660 → ₹699 | SAVE 85% ⚡"
+    },
+    {
+      "id": "tg_r100",
+      "name": "100 Reactions",
+      "price": 29,
+      "mrp": 64,
+      "days": "Instant",
+      "data": "100 Reactions",
+      "tag": "",
+      "desc": "100 post reactions | Instant | Real-looking | 30-day refill | MRP ₹64 → ₹29 | SAVE 55%"
+    },
+    {
+      "id": "tg_r1k",
+      "name": "1K Reactions",
+      "price": 249,
+      "mrp": 553,
+      "days": "1-2 Hrs",
+      "data": "1K Reactions",
+      "tag": "💬 Engage",
+      "desc": "1K reactions | All posts | 30-day refill | MRP ₹553 → ₹249 | SAVE 55%"
+    }
+  ],
+  "tiktok": [
+    {
+      "id": "tt_f1k",
+      "name": "1K Followers",
+      "price": 25,
+      "mrp": 56,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 followers | Real profiles | Instant | 30-day refill | MRP ₹56 → ₹25 | SAVE 55%"
+    },
+    {
+      "id": "tt_f10k",
+      "name": "10K Followers",
+      "price": 229,
+      "mrp": 509,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Trending",
+      "desc": "10K followers | Non-drop | Lifetime refill | Gradual | MRP ₹509 → ₹229 | SAVE 55%"
+    },
+    {
+      "id": "tt_f100k",
+      "name": "100K Followers",
+      "price": 2199,
+      "mrp": 14660,
+      "days": "4-8 Hrs",
+      "data": "100K",
+      "tag": "👑 Authority",
+      "desc": "100K followers | Lifetime refill | Real global | Brand authority | MRP ₹14,660 → ₹2,199 | SAVE 85% ⚡"
+    },
+    {
+      "id": "tt_l1k",
+      "name": "1K Likes",
+      "price": 12,
+      "mrp": 27,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 video likes | Instant | 30-day refill | MRP ₹27 → ₹12 | SAVE 55%"
+    },
+    {
+      "id": "tt_l10k",
+      "name": "10K Likes",
+      "price": 109,
+      "mrp": 242,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Viral",
+      "desc": "10K likes | All videos | High retention | 30-day refill | MRP ₹242 → ₹109 | SAVE 55%"
+    },
+    {
+      "id": "tt_v10k",
+      "name": "10K Views",
+      "price": 5,
+      "mrp": 11,
+      "days": "Instant",
+      "data": "10K Views",
+      "tag": "",
+      "desc": "10K video views | Instant | 30-day refill | MRP ₹11 → ₹5 | SAVE 55%"
+    },
+    {
+      "id": "tt_v100k",
+      "name": "100K Views",
+      "price": 45,
+      "mrp": 100,
+      "days": "1-2 Hrs",
+      "data": "100K Views",
+      "tag": "🔥 Trending",
+      "desc": "100K views | For You Page boost | 30-day refill | MRP ₹100 → ₹45 | SAVE 55%"
+    },
+    {
+      "id": "tt_v1m",
+      "name": "1M Views",
+      "price": 399,
+      "mrp": 2660,
+      "days": "2-4 Hrs",
+      "data": "1M Views",
+      "tag": "🚀 Viral",
+      "desc": "1 Million views | Trending guaranteed | 30-day refill | MRP ₹2,660 → ₹399 | SAVE 85% ⚡"
+    },
+    {
+      "id": "tt_c500",
+      "name": "500 Comments",
+      "price": 29,
+      "mrp": 64,
+      "days": "1-2 Hrs",
+      "data": "Custom",
+      "tag": "",
+      "desc": "500 custom comments | English | Real-looking | 30-day refill | MRP ₹64 → ₹29 | SAVE 55%"
+    }
+  ],
+  "snapchat": [
+    {
+      "id": "sc_f1k",
+      "name": "1K Followers",
+      "price": 35,
+      "mrp": 78,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 followers | Real profiles | Instant | 30-day refill | MRP ₹78 → ₹35 | SAVE 55%"
+    },
+    {
+      "id": "sc_f10k",
+      "name": "10K Followers",
+      "price": 299,
+      "mrp": 665,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Trending",
+      "desc": "10K followers | Non-drop | Lifetime refill | Gradual | MRP ₹665 → ₹299 | SAVE 55%"
+    },
+    {
+      "id": "sc_f50k",
+      "name": "50K Followers",
+      "price": 1299,
+      "mrp": 8660,
+      "days": "4-8 Hrs",
+      "data": "50K",
+      "tag": "👑 Authority",
+      "desc": "50K followers | Lifetime refill | Real global | Brand authority | MRP ₹8,660 → ₹1,299 | SAVE 85% ⚡"
+    },
+    {
+      "id": "sc_v1k",
+      "name": "1K Views",
+      "price": 15,
+      "mrp": 33,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 story views | Instant | 30-day refill | MRP ₹33 → ₹15 | SAVE 55%"
+    },
+    {
+      "id": "sc_v10k",
+      "name": "10K Views",
+      "price": 129,
+      "mrp": 287,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🔥 Viral",
+      "desc": "10K story views | High retention | 30-day refill | MRP ₹287 → ₹129 | SAVE 55%"
+    },
+    {
+      "id": "sc_s1k",
+      "name": "1K Screenshots",
+      "price": 19,
+      "mrp": 42,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 story screenshots | Instant | 30-day refill | MRP ₹42 → ₹19 | SAVE 55%"
+    },
+    {
+      "id": "sc_s10k",
+      "name": "10K Screenshots",
+      "price": 149,
+      "mrp": 331,
+      "days": "1-2 Hrs",
+      "data": "10K",
+      "tag": "🚀 Viral",
+      "desc": "10K screenshots | All stories | 30-day refill | MRP ₹331 → ₹149 | SAVE 55%"
+    }
+  ],
+  "linkedin": [
+    {
+      "id": "li_c500",
+      "name": "500 Connections",
+      "price": 199,
+      "mrp": 442,
+      "days": "1-2 Days",
+      "data": "500",
+      "tag": "",
+      "desc": "500 connections | Real profiles | 1-2 days | 30-day refill | MRP ₹442 → ₹199 | SAVE 55%"
+    },
+    {
+      "id": "li_c1k",
+      "name": "1K Connections",
+      "price": 349,
+      "mrp": 776,
+      "days": "2-4 Days",
+      "data": "1K",
+      "tag": "🔥 Trending",
+      "desc": "1,000 connections | Professional | 2-4 days | 30-day refill | MRP ₹776 → ₹349 | SAVE 55%"
+    },
+    {
+      "id": "li_c5k",
+      "name": "5K Connections",
+      "price": 1499,
+      "mrp": 9993,
+      "days": "5-7 Days",
+      "data": "5K",
+      "tag": "👑 Network",
+      "desc": "5K connections | Lifetime refill | Gradual | MRP ₹9,993 → ₹1,499 | SAVE 85% ⚡"
+    },
+    {
+      "id": "li_f1k",
+      "name": "1K Followers",
+      "price": 99,
+      "mrp": 220,
+      "days": "Instant",
+      "data": "1K",
+      "tag": "",
+      "desc": "1,000 followers | Real profiles | Instant | 30-day refill | MRP ₹220 → ₹99 | SAVE 55%"
+    },
+    {
+      "id": "li_f10k",
+      "name": "10K Followers",
+      "price": 799,
+      "mrp": 1776,
+      "days": "1-2 Days",
+      "data": "10K",
+      "tag": "🔥 Trending",
+      "desc": "10K followers | Non-drop | Lifetime refill | Gradual | MRP ₹1,776 → ₹799 | SAVE 55%"
+    },
+    {
+      "id": "li_e100",
+      "name": "100 Endorsements",
+      "price": 49,
+      "mrp": 109,
+      "days": "Instant",
+      "data": "100",
+      "tag": "",
+      "desc": "100 skill endorsements | Instant | 30-day refill | MRP ₹109 → ₹49 | SAVE 55%"
+    },
+    {
+      "id": "li_e500",
+      "name": "500 Endorsements",
+      "price": 199,
+      "mrp": 442,
+      "days": "1-2 Hrs",
+      "data": "500",
+      "tag": "💼 Pro",
+      "desc": "500 endorsements | All skills | 30-day refill | MRP ₹442 → ₹199 | SAVE 55%"
+    },
+    {
+      "id": "li_p100",
+      "name": "100 Post Likes",
+      "price": 29,
+      "mrp": 64,
+      "days": "Instant",
+      "data": "100",
+      "tag": "",
+      "desc": "100 post likes | Instant | 30-day refill | MRP ₹64 → ₹29 | SAVE 55%"
+    }
+  ],
+  "pubg": [
+    {
+      "id": "pubg_60",
+      "name": "60 UC",
+      "price": 79,
+      "mrp": 79,
+      "days": "Instant",
+      "data": "60 UC",
+      "tag": "",
+      "desc": "60 UC | Instant delivery | Official PUBG Mobile | MRP ₹145 → ₹79 | SAVE 46%"
+    },
+    {
+      "id": "pubg_325",
+      "name": "325 UC",
+      "price": 399,
+      "mrp": 399,
+      "days": "Instant",
+      "data": "325 UC",
+      "tag": "🔥 Trending",
+      "desc": "325 UC | Instant delivery | Best mid-pack | MRP ₹740 → ₹399 | SAVE 46%"
+    },
+    {
+      "id": "pubg_660",
+      "name": "660 UC",
+      "price": 799,
+      "mrp": 799,
+      "days": "Instant",
+      "data": "660 UC",
+      "tag": "",
+      "desc": "660 UC | Royale Pass ready | MRP ₹1,481 → ₹799 | SAVE 46%"
+    },
+    {
+      "id": "pubg_1800",
+      "name": "1,800 UC",
+      "price": 1999,
+      "mrp": 1999,
+      "days": "Instant",
+      "data": "1800 UC",
+      "tag": "⚡ Value",
+      "desc": "1,800 UC | Best per-UC rate | MRP ₹3,703 → ₹1,999 | SAVE 46%"
+    },
+    {
+      "id": "pubg_3850",
+      "name": "3,850 UC",
+      "price": 3999,
+      "mrp": 3999,
+      "days": "Instant",
+      "data": "3850 UC",
+      "tag": "🎮 Pro",
+      "desc": "3,850 UC | Multiple passes | MRP ₹7,407 → ₹3,999 | SAVE 46%"
+    },
+    {
+      "id": "pubg_8100",
+      "name": "8,100 UC",
+      "price": 7999,
+      "mrp": 7999,
+      "days": "Instant",
+      "data": "8100 UC",
+      "tag": "👑 Ultimate",
+      "desc": "8,100 UC | Full season | MRP ₹14,815 → ₹7,999 | SAVE 46%"
+    },
+    {
+      "id": "pubg_rp",
+      "name": "Royale Pass",
+      "price": 799,
+      "mrp": 799,
+      "days": "Instant",
+      "data": "Elite Pass",
+      "tag": "🏆 Must Have",
+      "desc": "Elite Royale Pass | Instant unlock | Season rewards | MRP ₹1,481 → ₹799 | SAVE 46%"
+    },
+    {
+      "id": "pubg_rpe",
+      "name": "Royale Pass Elite",
+      "price": 1999,
+      "mrp": 1999,
+      "days": "Instant",
+      "data": "Elite Pass Plus",
+      "tag": "💎 Premium",
+      "desc": "Elite Pass Plus | Instant unlock | 25 ranks boost | MRP ₹3,703 → ₹1,999 | SAVE 46%"
+    }
+  ],
+  "cod": [
+    {
+      "id": "cod_80",
+      "name": "80 CP",
+      "price": 79,
+      "mrp": 79,
+      "days": "Instant",
+      "data": "80 CP",
+      "tag": "",
+      "desc": "80 CP | Instant delivery | Call of Duty Mobile | MRP ₹145 → ₹79 | SAVE 46%"
+    },
+    {
+      "id": "cod_420",
+      "name": "420 CP",
+      "price": 399,
+      "mrp": 399,
+      "days": "Instant",
+      "data": "420 CP",
+      "tag": "🔥 Trending",
+      "desc": "420 CP | Instant delivery | Best starter | MRP ₹740 → ₹399 | SAVE 46%"
+    },
+    {
+      "id": "cod_880",
+      "name": "880 CP",
+      "price": 799,
+      "mrp": 799,
+      "days": "Instant",
+      "data": "880 CP",
+      "tag": "",
+      "desc": "880 CP | Battle Pass ready | MRP ₹1,481 → ₹799 | SAVE 46%"
+    },
+    {
+      "id": "cod_2400",
+      "name": "2,400 CP",
+      "price": 1999,
+      "mrp": 1999,
+      "days": "Instant",
+      "data": "2400 CP",
+      "tag": "⚡ Value",
+      "desc": "2,400 CP | Best per-CP rate | MRP ₹3,703 → ₹1,999 | SAVE 46%"
+    },
+    {
+      "id": "cod_5000",
+      "name": "5,000 CP",
+      "price": 3999,
+      "mrp": 3999,
+      "days": "Instant",
+      "data": "5000 CP",
+      "tag": "🎮 Pro",
+      "desc": "5,000 CP | Legendary draws | MRP ₹7,407 → ₹3,999 | SAVE 46%"
+    },
+    {
+      "id": "cod_10800",
+      "name": "10,800 CP",
+      "price": 7999,
+      "mrp": 7999,
+      "days": "Instant",
+      "data": "10800 CP",
+      "tag": "👑 Ultimate",
+      "desc": "10,800 CP | Full season | MRP ₹14,815 → ₹7,999 | SAVE 46%"
+    },
+    {
+      "id": "cod_bp",
+      "name": "Battle Pass",
+      "price": 799,
+      "mrp": 799,
+      "days": "Instant",
+      "data": "Elite Pass",
+      "tag": "🏆 Must Have",
+      "desc": "Elite Battle Pass | Instant unlock | Season rewards | MRP ₹1,481 → ₹799 | SAVE 46%"
+    },
+    {
+      "id": "cod_bpp",
+      "name": "Battle Pass Plus",
+      "price": 1999,
+      "mrp": 1999,
+      "days": "Instant",
+      "data": "Elite Pass Plus",
+      "tag": "💎 Premium",
+      "desc": "Elite Pass Plus | Instant unlock | 12 tiers boost | MRP ₹3,703 → ₹1,999 | SAVE 46%"
+    }
+  ],
+  "steam": [
+    {
+      "id": "steam_100",
+      "name": "₹100 Wallet",
+      "price": 89,
+      "mrp": 89,
+      "days": "Instant",
+      "data": "₹100",
+      "tag": "",
+      "desc": "₹100 Steam Wallet | Instant code | Global | MRP ₹165 → ₹89 | SAVE 46%"
+    },
+    {
+      "id": "steam_250",
+      "name": "₹250 Wallet",
+      "price": 219,
+      "mrp": 219,
+      "days": "Instant",
+      "data": "₹250",
+      "tag": "🔥 Trending",
+      "desc": "₹250 Steam Wallet | Instant code | Best value | MRP ₹406 → ₹219 | SAVE 46%"
+    },
+    {
+      "id": "steam_500",
+      "name": "₹500 Wallet",
+      "price": 429,
+      "mrp": 429,
+      "days": "Instant",
+      "data": "₹500",
+      "tag": "",
+      "desc": "₹500 Steam Wallet | Instant code | MRP ₹795 → ₹429 | SAVE 46%"
+    },
+    {
+      "id": "steam_1000",
+      "name": "₹1,000 Wallet",
+      "price": 849,
+      "mrp": 849,
+      "days": "Instant",
+      "data": "₹1000",
+      "tag": "⚡ Value",
+      "desc": "₹1,000 Steam Wallet | Instant code | MRP ₹1,574 → ₹849 | SAVE 46%"
+    },
+    {
+      "id": "steam_2000",
+      "name": "₹2,000 Wallet",
+      "price": 1699,
+      "mrp": 1699,
+      "days": "Instant",
+      "data": "₹2000",
+      "tag": "🎮 Pro",
+      "desc": "₹2,000 Steam Wallet | Instant code | MRP ₹3,147 → ₹1,699 | SAVE 46%"
+    },
+    {
+      "id": "steam_5000",
+      "name": "₹5,000 Wallet",
+      "price": 4199,
+      "mrp": 4199,
+      "days": "Instant",
+      "data": "₹5000",
+      "tag": "👑 Ultimate",
+      "desc": "₹5,000 Steam Wallet | Instant code | MRP ₹7,777 → ₹4,199 | SAVE 46%"
+    },
+    {
+      "id": "steam_usd5",
+      "name": "$5 USD Card",
+      "price": 449,
+      "mrp": 449,
+      "days": "Instant",
+      "data": "$5",
+      "tag": "",
+      "desc": "$5 USD Steam Card | Instant code | Global | MRP ₹832 → ₹449 | SAVE 46%"
+    },
+    {
+      "id": "steam_usd10",
+      "name": "$10 USD Card",
+      "price": 899,
+      "mrp": 899,
+      "days": "Instant",
+      "data": "$10",
+      "tag": "🔥 Trending",
+      "desc": "$10 USD Steam Card | Instant code | Global | MRP ₹1,665 → ₹899 | SAVE 46%"
+    },
+    {
+      "id": "steam_usd20",
+      "name": "$20 USD Card",
+      "price": 1799,
+      "mrp": 1799,
+      "days": "Instant",
+      "data": "$20",
+      "tag": "💎 Premium",
+      "desc": "$20 USD Steam Card | Instant code | Global | MRP ₹3,331 → ₹1,799 | SAVE 46%"
+    }
+  ],
+  "psn": [
+    {
+      "id": "psn_500",
+      "name": "₹500 PSN Card",
+      "price": 449,
+      "mrp": 449,
+      "days": "Instant",
+      "data": "₹500",
+      "tag": "",
+      "desc": "₹500 PSN Card | Instant code | India | MRP ₹832 → ₹449 | SAVE 46%"
+    },
+    {
+      "id": "psn_1000",
+      "name": "₹1,000 PSN Card",
+      "price": 899,
+      "mrp": 899,
+      "days": "Instant",
+      "data": "₹1000",
+      "tag": "🔥 Trending",
+      "desc": "₹1,000 PSN Card | Instant code | India | MRP ₹1,665 → ₹899 | SAVE 46%"
+    },
+    {
+      "id": "psn_2500",
+      "name": "₹2,500 PSN Card",
+      "price": 2199,
+      "mrp": 2199,
+      "days": "Instant",
+      "data": "₹2500",
+      "tag": "",
+      "desc": "₹2,500 PSN Card | Instant code | India | MRP ₹4,072 → ₹2,199 | SAVE 46%"
+    },
+    {
+      "id": "psn_4000",
+      "name": "₹4,000 PSN Card",
+      "price": 3499,
+      "mrp": 3499,
+      "days": "Instant",
+      "data": "₹4000",
+      "tag": "⚡ Value",
+      "desc": "₹4,000 PSN Card | Instant code | India | MRP ₹6,480 → ₹3,499 | SAVE 46%"
+    },
+    {
+      "id": "psn_plus1m",
+      "name": "PS Plus Essential 1M",
+      "price": 499,
+      "mrp": 499,
+      "days": "Instant",
+      "data": "1 Month",
+      "tag": "",
+      "desc": "PS Plus Essential | 1 month | Online multiplayer | Monthly games | MRP ₹924 → ₹499 | SAVE 46%"
+    },
+    {
+      "id": "psn_plus3m",
+      "name": "PS Plus Essential 3M",
+      "price": 1299,
+      "mrp": 1299,
+      "days": "Instant",
+      "data": "3 Months",
+      "tag": "🔥 Trending",
+      "desc": "PS Plus Essential | 3 months | Online multiplayer | Monthly games | MRP ₹2,406 → ₹1,299 | SAVE 46%"
+    },
+    {
+      "id": "psn_plus12m",
+      "name": "PS Plus Essential 1Y",
+      "price": 3499,
+      "mrp": 3499,
+      "days": "Instant",
+      "data": "12 Months",
+      "tag": "👑 Best Value",
+      "desc": "PS Plus Essential | 12 months | Online multiplayer | Monthly games | MRP ₹6,480 → ₹3,499 | SAVE 46%"
+    },
+    {
+      "id": "psn_plus_extra",
+      "name": "PS Plus Extra 3M",
+      "price": 1999,
+      "mrp": 1999,
+      "days": "Instant",
+      "data": "3 Months",
+      "tag": "💎 Premium",
+      "desc": "PS Plus Extra | 3 months | Game catalog | Classics | MRP ₹3,702 → ₹1,999 | SAVE 46%"
+    }
+  ],
+  "xbox": [
+    {
+      "id": "xbox_100",
+      "name": "₹100 Xbox Card",
+      "price": 89,
+      "mrp": 89,
+      "days": "Instant",
+      "data": "₹100",
+      "tag": "",
+      "desc": "₹100 Xbox Gift Card | Instant code | India | MRP ₹165 → ₹89 | SAVE 46%"
+    },
+    {
+      "id": "xbox_250",
+      "name": "₹250 Xbox Card",
+      "price": 219,
+      "mrp": 219,
+      "days": "Instant",
+      "data": "₹250",
+      "tag": "",
+      "desc": "₹250 Xbox Gift Card | Instant code | India | MRP ₹406 → ₹219 | SAVE 46%"
+    },
+    {
+      "id": "xbox_500",
+      "name": "₹500 Xbox Card",
+      "price": 429,
+      "mrp": 429,
+      "days": "Instant",
+      "data": "₹500",
+      "tag": "🔥 Trending",
+      "desc": "₹500 Xbox Gift Card | Instant code | India | MRP ₹795 → ₹429 | SAVE 46%"
+    },
+    {
+      "id": "xbox_1000",
+      "name": "₹1,000 Xbox Card",
+      "price": 849,
+      "mrp": 849,
+      "days": "Instant",
+      "data": "₹1000",
+      "tag": "",
+      "desc": "₹1,000 Xbox Gift Card | Instant code | India | MRP ₹1,574 → ₹849 | SAVE 46%"
+    },
+    {
+      "id": "xbox_gp1m",
+      "name": "Game Pass 1 Month",
+      "price": 349,
+      "mrp": 349,
+      "days": "Instant",
+      "data": "1 Month",
+      "tag": "",
+      "desc": "Xbox Game Pass | 1 month | 100+ games | Day one releases | MRP ₹647 → ₹349 | SAVE 46%"
+    },
+    {
+      "id": "xbox_gp3m",
+      "name": "Game Pass 3 Months",
+      "price": 999,
+      "mrp": 999,
+      "days": "Instant",
+      "data": "3 Months",
+      "tag": "🔥 Trending",
+      "desc": "Xbox Game Pass | 3 months | 100+ games | EA Play included | MRP ₹1,850 → ₹999 | SAVE 46%"
+    },
+    {
+      "id": "xbox_gpu1m",
+      "name": "Game Pass Ultimate 1M",
+      "price": 549,
+      "mrp": 549,
+      "days": "Instant",
+      "data": "1 Month",
+      "tag": "",
+      "desc": "Game Pass Ultimate | 1 month | Console + PC + Cloud | EA Play | MRP ₹1,017 → ₹549 | SAVE 46%"
+    },
+    {
+      "id": "xbox_gpu3m",
+      "name": "Game Pass Ultimate 3M",
+      "price": 1499,
+      "mrp": 1499,
+      "days": "Instant",
+      "data": "3 Months",
+      "tag": "💎 Premium",
+      "desc": "Game Pass Ultimate | 3 months | Console + PC + Cloud | EA Play | MRP ₹2,776 → ₹1,499 | SAVE 46%"
+    }
+  ],
+  "spotify": [
+    {
+      "id": "sp1",
+      "name": "Mini – 1 Day",
+      "price": 7,
+      "mrp": 7,
+      "days": "1 Day",
+      "data": "Ad-free Music",
+      "tag": "",
+      "desc": "Ad-free music | 30 song skips | 1 day | Mobile only"
+    },
+    {
+      "id": "sp2",
+      "name": "Mini – 1 Week",
+      "price": 25,
+      "mrp": 25,
+      "days": "7 Days",
+      "data": "Ad-free Music",
+      "tag": "",
+      "desc": "Ad-free music | 30 song skips | 7 days | Mobile only"
+    },
+    {
+      "id": "sp3",
+      "name": "Premium Individual – 1M",
+      "price": 119,
+      "mrp": 119,
+      "days": "30 Days",
+      "data": "Premium",
+      "tag": "🔥 Trending",
+      "desc": "Ad-free music | Offline download | Unlimited skips | 1 screen | 30 days"
+    },
+    {
+      "id": "sp4",
+      "name": "Premium Individual – 3M",
+      "price": 349,
+      "mrp": 349,
+      "days": "90 Days",
+      "data": "Save ₹8",
+      "tag": "",
+      "desc": "Ad-free music | Offline download | Unlimited skips | 3 months"
+    },
+    {
+      "id": "sp5",
+      "name": "Premium Individual – 1Y",
+      "price": 1189,
+      "mrp": 1189,
+      "days": "365 Days",
+      "data": "Save ₹239",
+      "tag": "🏆 Best Value",
+      "desc": "Ad-free music | Offline download | Unlimited skips | 12 months | ₹3.26/day"
+    },
+    {
+      "id": "sp6",
+      "name": "Premium Duo – 1M",
+      "price": 149,
+      "mrp": 149,
+      "days": "30 Days",
+      "data": "2 Accounts",
+      "tag": "",
+      "desc": "2 Premium accounts | Duo Mix playlist | 30 days | Same address"
+    },
+    {
+      "id": "sp7",
+      "name": "Premium Family – 1M",
+      "price": 179,
+      "mrp": 179,
+      "days": "30 Days",
+      "data": "6 Accounts",
+      "tag": "",
+      "desc": "6 Premium accounts | Family Mix | Explicit filter | 30 days"
+    },
+    {
+      "id": "sp8",
+      "name": "Premium Student – 1M",
+      "price": 59,
+      "mrp": 59,
+      "days": "30 Days",
+      "data": "Student",
+      "tag": "🎓 Student",
+      "desc": "Student pricing | Ad-free | Hulu (US) | 30 days | Student verification"
+    }
+  ],
+  "netflix": [
+    {
+      "id": "nf1",
+      "name": "Mobile – 1 Month",
+      "price": 149,
+      "mrp": 149,
+      "days": "30 Days",
+      "data": "480p Mobile",
+      "tag": "",
+      "desc": "480p | 1 mobile device | All content | 30 days"
+    },
+    {
+      "id": "nf2",
+      "name": "Basic – 1 Month",
+      "price": 199,
+      "mrp": 199,
+      "days": "30 Days",
+      "data": "720p 1 Screen",
+      "tag": "",
+      "desc": "720p | 1 screen | All content | 30 days | Laptop/TV/Mobile"
+    },
+    {
+      "id": "nf3",
+      "name": "Standard – 1 Month",
+      "price": 499,
+      "mrp": 499,
+      "days": "30 Days",
+      "data": "1080p 2 Screens",
+      "tag": "🔥 Trending",
+      "desc": "1080p Full HD | 2 screens | All content | 30 days"
+    },
+    {
+      "id": "nf4",
+      "name": "Premium – 1 Month",
+      "price": 649,
+      "mrp": 649,
+      "days": "30 Days",
+      "data": "4K+HDR 4 Screens",
+      "tag": "🏆 Best Buy",
+      "desc": "4K+HDR | 4 screens | Spatial audio | All content | 30 days"
+    },
+    {
+      "id": "nf5",
+      "name": "Standard – 3 Months",
+      "price": 1399,
+      "mrp": 1399,
+      "days": "90 Days",
+      "data": "Save ₹98",
+      "tag": "",
+      "desc": "1080p Full HD | 2 screens | 3 months | Save vs monthly"
+    },
+    {
+      "id": "nf6",
+      "name": "Premium – 3 Months",
+      "price": 1849,
+      "mrp": 1849,
+      "days": "90 Days",
+      "data": "Save ₹98",
+      "tag": "",
+      "desc": "4K+HDR | 4 screens | 3 months | Save vs monthly"
+    },
+    {
+      "id": "nf7",
+      "name": "Standard – 1 Year",
+      "price": 4999,
+      "mrp": 4999,
+      "days": "365 Days",
+      "data": "Save ₹989",
+      "tag": "💎 Annual",
+      "desc": "1080p Full HD | 2 screens | 12 months | Best savings"
+    },
+    {
+      "id": "nf8",
+      "name": "Premium – 1 Year",
+      "price": 6499,
+      "mrp": 6499,
+      "days": "365 Days",
+      "data": "Save ₹1289",
+      "tag": "👑 Best Value",
+      "desc": "4K+HDR | 4 screens | 12 months | Maximum savings | ₹17.81/day"
+    }
+  ],
+  "hotstar": [
+    {
+      "id": "hs1",
+      "name": "Mobile – 1 Month",
+      "price": 149,
+      "mrp": 149,
+      "days": "30 Days",
+      "data": "Mobile Only",
+      "tag": "",
+      "desc": "All content | 1 mobile device | 720p | 30 days | Ads included"
+    },
+    {
+      "id": "hs2",
+      "name": "Super – 1 Month",
+      "price": 299,
+      "mrp": 299,
+      "days": "30 Days",
+      "data": "2 Screens",
+      "tag": "🔥 Trending",
+      "desc": "All content | 2 screens | 1080p | 30 days | Ads included"
+    },
+    {
+      "id": "hs3",
+      "name": "Premium – 1 Month",
+      "price": 499,
+      "mrp": 499,
+      "days": "30 Days",
+      "data": "4 Screens 4K",
+      "tag": "🏆 Best Buy",
+      "desc": "All content | 4 screens | 4K | Dolby Atmos | 30 days | Ad-free"
+    },
+    {
+      "id": "hs4",
+      "name": "Super – 3 Months",
+      "price": 899,
+      "mrp": 899,
+      "days": "90 Days",
+      "data": "Save ₹98",
+      "tag": "",
+      "desc": "All content | 2 screens | 1080p | 3 months | Ads included"
+    },
+    {
+      "id": "hs5",
+      "name": "Premium – 3 Months",
+      "price": 1499,
+      "mrp": 1499,
+      "days": "90 Days",
+      "data": "Save ₹98",
+      "tag": "",
+      "desc": "All content | 4 screens | 4K | 3 months | Ad-free"
+    },
+    {
+      "id": "hs6",
+      "name": "Super – 1 Year",
+      "price": 3499,
+      "mrp": 3499,
+      "days": "365 Days",
+      "data": "Save ₹89",
+      "tag": "💎 Annual",
+      "desc": "All content | 2 screens | 1080p | 12 months | Ads included"
+    },
+    {
+      "id": "hs7",
+      "name": "Premium – 1 Year",
+      "price": 4999,
+      "mrp": 4999,
+      "days": "365 Days",
+      "data": "Save ₹989",
+      "tag": "👑 Best Value",
+      "desc": "All content | 4 screens | 4K | Dolby Atmos | 12 months | Ad-free | ₹13.70/day"
+    }
+  ],
+  "ytpremium": [
+    {
+      "id": "ytp1",
+      "name": "Individual – 1 Month",
+      "price": 129,
+      "mrp": 129,
+      "days": "30 Days",
+      "data": "Ad-free",
+      "tag": "🔥 Trending",
+      "desc": "Ad-free videos | Background play | Downloads | 1 screen | 30 days"
+    },
+    {
+      "id": "ytp2",
+      "name": "Individual – 3 Months",
+      "price": 389,
+      "mrp": 389,
+      "days": "90 Days",
+      "data": "Save ₹98",
+      "tag": "",
+      "desc": "Ad-free videos | Background play | Downloads | 3 months | Save vs monthly"
+    },
+    {
+      "id": "ytp3",
+      "name": "Individual – 1 Year",
+      "price": 1290,
+      "mrp": 1290,
+      "days": "365 Days",
+      "data": "Save ₹258",
+      "tag": "👑 Best Value",
+      "desc": "Ad-free videos | Background play | Downloads | 12 months | ₹3.53/day"
+    },
+    {
+      "id": "ytp4",
+      "name": "Family – 1 Month",
+      "price": 189,
+      "mrp": 189,
+      "days": "30 Days",
+      "data": "5 Members",
+      "tag": "",
+      "desc": "5 family members | Ad-free | Background play | Downloads | 30 days"
+    },
+    {
+      "id": "ytp5",
+      "name": "Family – 3 Months",
+      "price": 569,
+      "mrp": 569,
+      "days": "90 Days",
+      "data": "Save ₹98",
+      "tag": "",
+      "desc": "5 family members | Ad-free | Background play | Downloads | 3 months"
+    },
+    {
+      "id": "ytp6",
+      "name": "Family – 1 Year",
+      "price": 1890,
+      "mrp": 1890,
+      "days": "365 Days",
+      "data": "Save ₹378",
+      "tag": "💎 Annual",
+      "desc": "5 family members | Ad-free | Background play | Downloads | 12 months | ₹5.18/day"
+    },
+    {
+      "id": "ytp7",
+      "name": "Student – 1 Month",
+      "price": 79,
+      "mrp": 79,
+      "days": "30 Days",
+      "data": "Student",
+      "tag": "🎓 Student",
+      "desc": "Student pricing | Ad-free | Background play | 30 days | Student verification"
+    },
+    {
+      "id": "ytp8",
+      "name": "Student – 1 Year",
+      "price": 890,
+      "mrp": 890,
+      "days": "365 Days",
+      "data": "Save ₹58",
+      "tag": "",
+      "desc": "Student pricing | Ad-free | Background play | 12 months | ₹2.44/day"
+    }
+  ],
+  "discord": [
+    {
+      "id": "dc_nitro1m",
+      "name": "Nitro – 1 Month",
+      "price": 349,
+      "mrp": 349,
+      "days": "30 Days",
+      "data": "Nitro",
+      "tag": "🔥 Trending",
+      "desc": "Nitro | Custom emojis | HD video | 2 server boosts | 30 days"
+    },
+    {
+      "id": "dc_nitro3m",
+      "name": "Nitro – 3 Months",
+      "price": 999,
+      "mrp": 999,
+      "days": "90 Days",
+      "data": "Save ₹48",
+      "tag": "",
+      "desc": "Nitro | Custom emojis | HD video | 2 server boosts | 3 months"
+    },
+    {
+      "id": "dc_nitro1y",
+      "name": "Nitro – 1 Year",
+      "price": 3499,
+      "mrp": 3499,
+      "days": "365 Days",
+      "data": "Save ₹689",
+      "tag": "👑 Best Value",
+      "desc": "Nitro | Custom emojis | HD video | 2 server boosts | 12 months | ₹9.59/day"
+    },
+    {
+      "id": "dc_basic1m",
+      "name": "Nitro Basic – 1M",
+      "price": 99,
+      "mrp": 99,
+      "days": "30 Days",
+      "data": "Basic",
+      "tag": "",
+      "desc": "Nitro Basic | Custom emojis | 50MB uploads | 30 days"
+    },
+    {
+      "id": "dc_basic1y",
+      "name": "Nitro Basic – 1Y",
+      "price": 990,
+      "mrp": 990,
+      "days": "365 Days",
+      "data": "Save ₹198",
+      "tag": "",
+      "desc": "Nitro Basic | Custom emojis | 50MB uploads | 12 months | ₹2.71/day"
+    },
+    {
+      "id": "dc_boost1",
+      "name": "1 Server Boost",
+      "price": 349,
+      "mrp": 349,
+      "days": "30 Days",
+      "data": "1 Boost",
+      "tag": "",
+      "desc": "1 server boost | Level 1 perks | 30 days | Stackable"
+    },
+    {
+      "id": "dc_boost2",
+      "name": "2 Server Boosts",
+      "price": 699,
+      "mrp": 699,
+      "days": "30 Days",
+      "data": "2 Boosts",
+      "tag": "⚡ Value",
+      "desc": "2 server boosts | Level 2 perks | 30 days | Stackable"
+    }
+  ],
+  "applemusic": [
+    {
+      "id": "am1",
+      "name": "Individual – 1 Month",
+      "price": 99,
+      "mrp": 99,
+      "days": "30 Days",
+      "data": "Premium",
+      "tag": "🔥 Trending",
+      "desc": "Ad-free music | Offline download | Spatial audio | 1 screen | 30 days"
+    },
+    {
+      "id": "am2",
+      "name": "Individual – 3 Months",
+      "price": 289,
+      "mrp": 289,
+      "days": "90 Days",
+      "data": "Save ₹8",
+      "tag": "",
+      "desc": "Ad-free music | Offline download | Spatial audio | 3 months"
+    },
+    {
+      "id": "am3",
+      "name": "Individual – 1 Year",
+      "price": 990,
+      "mrp": 990,
+      "days": "365 Days",
+      "data": "Save ₹198",
+      "tag": "👑 Best Value",
+      "desc": "Ad-free music | Offline download | Spatial audio | 12 months | ₹2.71/day"
+    },
+    {
+      "id": "am4",
+      "name": "Family – 1 Month",
+      "price": 149,
+      "mrp": 149,
+      "days": "30 Days",
+      "data": "6 Members",
+      "tag": "",
+      "desc": "6 family members | Ad-free | Offline | Spatial audio | 30 days"
+    },
+    {
+      "id": "am5",
+      "name": "Family – 1 Year",
+      "price": 1490,
+      "mrp": 1490,
+      "days": "365 Days",
+      "data": "Save ₹298",
+      "tag": "💎 Annual",
+      "desc": "6 family members | Ad-free | Offline | Spatial audio | 12 months | ₹4.08/day"
+    },
+    {
+      "id": "am6",
+      "name": "Student – 1 Month",
+      "price": 49,
+      "mrp": 49,
+      "days": "30 Days",
+      "data": "Student",
+      "tag": "🎓 Student",
+      "desc": "Student pricing | Ad-free | Offline | 30 days | Student verification"
+    },
+    {
+      "id": "am7",
+      "name": "Student – 1 Year",
+      "price": 490,
+      "mrp": 490,
+      "days": "365 Days",
+      "data": "Save ₹98",
+      "tag": "",
+      "desc": "Student pricing | Ad-free | Offline | 12 months | ₹1.34/day"
+    }
+  ],
+  "canva": [
+    {
+      "id": "cv_pro1m",
+      "name": "Canva Pro – 1 Month",
+      "price": 499,
+      "mrp": 499,
+      "days": "30 Days",
+      "data": "Pro",
+      "tag": "🔥 Trending",
+      "desc": "Canva Pro | 100M+ stock | Background remover | Brand kit | 30 days"
+    },
+    {
+      "id": "cv_pro1y",
+      "name": "Canva Pro – 1 Year",
+      "price": 3999,
+      "mrp": 3999,
+      "days": "365 Days",
+      "data": "Save ₹1989",
+      "tag": "👑 Best Value",
+      "desc": "Canva Pro | 100M+ stock | Background remover | Brand kit | 12 months | ₹10.96/day"
+    },
+    {
+      "id": "cv_team1m",
+      "name": "Canva Teams – 1M",
+      "price": 699,
+      "mrp": 699,
+      "days": "30 Days",
+      "data": "5 Members",
+      "tag": "",
+      "desc": "Canva Teams | 5 members | Collaboration | Brand controls | 30 days"
+    },
+    {
+      "id": "cv_team1y",
+      "name": "Canva Teams – 1Y",
+      "price": 5999,
+      "mrp": 5999,
+      "days": "365 Days",
+      "data": "Save ₹2389",
+      "tag": "💎 Premium",
+      "desc": "Canva Teams | 5 members | Collaboration | Brand controls | 12 months | ₹16.44/day"
+    },
+    {
+      "id": "cv_edu",
+      "name": "Canva Edu – 1 Year",
+      "price": 1999,
+      "mrp": 1999,
+      "days": "365 Days",
+      "data": "Education",
+      "tag": "",
+      "desc": "Canva for Education | Free for teachers | Classroom features | 12 months"
+    }
+  ],
+  "zoom": [
+    {
+      "id": "zm_pro1m",
+      "name": "Zoom Pro – 1 Month",
+      "price": 1399,
+      "mrp": 1399,
+      "days": "30 Days",
+      "data": "Pro",
+      "tag": "🔥 Trending",
+      "desc": "Zoom Pro | 30 hrs meeting | Cloud recording | 100 participants | 30 days"
+    },
+    {
+      "id": "zm_pro1y",
+      "name": "Zoom Pro – 1 Year",
+      "price": 13990,
+      "mrp": 13990,
+      "days": "365 Days",
+      "data": "Save ₹2798",
+      "tag": "👑 Best Value",
+      "desc": "Zoom Pro | 30 hrs meeting | Cloud recording | 100 participants | 12 months | ₹38.33/day"
+    },
+    {
+      "id": "zm_biz1m",
+      "name": "Zoom Business – 1M",
+      "price": 1999,
+      "mrp": 1999,
+      "days": "30 Days",
+      "data": "Business",
+      "tag": "",
+      "desc": "Zoom Business | 300 participants | Admin portal | 30 days"
+    },
+    {
+      "id": "zm_biz1y",
+      "name": "Zoom Business – 1Y",
+      "price": 19990,
+      "mrp": 19990,
+      "days": "365 Days",
+      "data": "Save ₹3998",
+      "tag": "💎 Premium",
+      "desc": "Zoom Business | 300 participants | Admin portal | 12 months | ₹54.77/day"
+    },
+    {
+      "id": "zm_web500",
+      "name": "Webinar 500 – 1M",
+      "price": 6490,
+      "mrp": 6490,
+      "days": "30 Days",
+      "data": "500 Attendees",
+      "tag": "",
+      "desc": "Zoom Webinar 500 | 500 attendees | Registration | Q&A | 30 days"
+    },
+    {
+      "id": "zm_web1k",
+      "name": "Webinar 1K – 1M",
+      "price": 8990,
+      "mrp": 8990,
+      "days": "30 Days",
+      "data": "1000 Attendees",
+      "tag": "🚀 Enterprise",
+      "desc": "Zoom Webinar 1K | 1000 attendees | Registration | Q&A | 30 days"
+    }
+  ],
+  "adobe": [
+    {
+      "id": "ad_cc1m",
+      "name": "Creative Cloud – 1M",
+      "price": 1999,
+      "mrp": 1999,
+      "days": "30 Days",
+      "data": "20+ Apps",
+      "tag": "🔥 Trending",
+      "desc": "Creative Cloud | Photoshop | Premiere | Illustrator | 20+ apps | 30 days"
+    },
+    {
+      "id": "ad_cc1y",
+      "name": "Creative Cloud – 1Y",
+      "price": 19999,
+      "mrp": 19999,
+      "days": "365 Days",
+      "data": "Save ₹3989",
+      "tag": "👑 Best Value",
+      "desc": "Creative Cloud | Photoshop | Premiere | Illustrator | 20+ apps | 12 months | ₹54.79/day"
+    },
+    {
+      "id": "ad_ps1m",
+      "name": "Photography – 1M",
+      "price": 999,
+      "mrp": 999,
+      "days": "30 Days",
+      "data": "PS + LR",
+      "tag": "",
+      "desc": "Photography plan | Photoshop | Lightroom | 20GB cloud | 30 days"
+    },
+    {
+      "id": "ad_ps1y",
+      "name": "Photography – 1Y",
+      "price": 9999,
+      "mrp": 9999,
+      "days": "365 Days",
+      "data": "Save ₹1989",
+      "tag": "💎 Annual",
+      "desc": "Photography plan | Photoshop | Lightroom | 20GB cloud | 12 months | ₹27.39/day"
+    },
+    {
+      "id": "ad_ai1m",
+      "name": "Illustrator – 1M",
+      "price": 1499,
+      "mrp": 1499,
+      "days": "30 Days",
+      "data": "Illustrator",
+      "tag": "",
+      "desc": "Illustrator single app | Vector graphics | 100GB cloud | 30 days"
+    },
+    {
+      "id": "ad_pr1m",
+      "name": "Premiere Pro – 1M",
+      "price": 1799,
+      "mrp": 1799,
+      "days": "30 Days",
+      "data": "Premiere",
+      "tag": "",
+      "desc": "Premiere Pro single app | Video editing | 100GB cloud | 30 days"
+    },
+    {
+      "id": "ad_ae1m",
+      "name": "After Effects – 1M",
+      "price": 1799,
+      "mrp": 1799,
+      "days": "30 Days",
+      "data": "After Effects",
+      "tag": "🎬 Pro",
+      "desc": "After Effects single app | Motion graphics | 100GB cloud | 30 days"
+    }
+  ],
+  "bgmi": [
+    {
+      "id": "bgmi_60",
+      "name": "60 UC Pack",
+      "price": 12,
+      "mrp": 80,
+      "days": "Instant",
+      "data": "60 UC",
+      "tag": "🔥 85% OFF",
+      "desc": "MRP ₹80 → ₹12 | SAVE 85% | 60 UC | Instant BGMI top-up | FF-style deal"
+    },
+    {
+      "id": "bgmi_325",
+      "name": "325 UC Pack",
+      "price": 65,
+      "mrp": 399,
+      "days": "Instant",
+      "data": "325 UC",
+      "tag": "🔥 Trending",
+      "desc": "MRP ₹399 → ₹65 | SAVE 84% | 325 UC | Best mid pack | Instant delivery"
+    },
+    {
+      "id": "bgmi_660",
+      "name": "660 UC Pack",
+      "price": 129,
+      "mrp": 799,
+      "days": "Instant",
+      "data": "660 UC",
+      "tag": "🏆 Best Buy",
+      "desc": "MRP ₹799 → ₹129 | SAVE 84% | 660 UC | High value | Instant delivery"
+    },
+    {
+      "id": "bgmi_1800",
+      "name": "1,800 UC Pack",
+      "price": 349,
+      "mrp": 2199,
+      "days": "Instant",
+      "data": "1,800 UC",
+      "tag": "⚡ Power",
+      "desc": "MRP ₹2,199 → ₹349 | SAVE 84% | 1,800 UC | Premium pack"
+    },
+    {
+      "id": "bgmi_3850",
+      "name": "3,850 UC Pack",
+      "price": 699,
+      "mrp": 4699,
+      "days": "Instant",
+      "data": "3,850 UC",
+      "tag": "👑 Mega Deal",
+      "desc": "MRP ₹4,699 → ₹699 | SAVE 85% | 3,850 UC | Mega conversion pack"
+    },
+    {
+      "id": "bgmi_8100",
+      "name": "8,100 UC Pack",
+      "price": 1399,
+      "mrp": 9499,
+      "days": "Instant",
+      "data": "8,100 UC",
+      "tag": "💎 Ultra",
+      "desc": "MRP ₹9,499 → ₹1,399 | SAVE 85% | 8,100 UC | Season stack ready"
+    },
+    {
+      "id": "bgmi_elite_pass",
+      "name": "Elite Royale Pass",
+      "price": 129,
+      "mrp": 720,
+      "days": "Season Access",
+      "data": "Elite Pass",
+      "tag": "🏆 Royale",
+      "desc": "MRP ₹720 → ₹129 | SAVE 82% | Elite Royale Pass | Seasonal rewards"
+    }
+  ],
+  "genshin": [
+    {
+      "id": "gi_60",
+      "name": "60 Genesis Crystals",
+      "price": 79,
+      "mrp": 89,
+      "days": "Instant",
+      "data": "60 Crystals",
+      "tag": "",
+      "desc": "Genshin Impact 60 Genesis Crystals"
+    },
+    {
+      "id": "gi_300",
+      "name": "300 + 30 Genesis Crystals",
+      "price": 419,
+      "mrp": 449,
+      "days": "Instant",
+      "data": "330 Crystals",
+      "tag": "Popular",
+      "desc": "300 Genesis Crystals plus 30 bonus"
+    },
+    {
+      "id": "gi_980",
+      "name": "980 + 110 Genesis Crystals",
+      "price": 1399,
+      "mrp": 1499,
+      "days": "Instant",
+      "data": "1,090 Crystals",
+      "tag": "Best Value",
+      "desc": "980 Genesis Crystals plus 110 bonus"
+    },
+    {
+      "id": "gi_1980",
+      "name": "1,980 + 260 Genesis Crystals",
+      "price": 2799,
+      "mrp": 2999,
+      "days": "Instant",
+      "data": "2,240 Crystals",
+      "tag": "Mega Pack",
+      "desc": "1,980 Genesis Crystals plus 260 bonus"
+    },
+    {
+      "id": "gi_welkin",
+      "name": "Blessing of the Welkin Moon",
+      "price": 399,
+      "mrp": 449,
+      "days": "30 Days",
+      "data": "Welkin Moon",
+      "tag": "Monthly",
+      "desc": "Blessing of the Welkin Moon monthly access"
+    }
+  ],
+  "chatgpt": [
+    {
+      "id": "gpt_plus_1m",
+      "name": "ChatGPT Plus - 1 Month",
+      "price": 1899,
+      "mrp": 1999,
+      "days": "30 Days",
+      "data": "Plus Access",
+      "tag": "Premium AI",
+      "desc": "One month ChatGPT Plus access | Priority availability and advanced tools"
+    }
+  ],
+  "gemini": [
+    {
+      "id": "gemini_adv_1m",
+      "name": "Gemini Advanced - 1 Month",
+      "price": 1849,
+      "mrp": 1950,
+      "days": "30 Days",
+      "data": "AI Premium",
+      "tag": "Advanced AI",
+      "desc": "Gemini Advanced with Google AI Premium access"
+    },
+    {
+      "id": "google_one_2tb",
+      "name": "Google One - 2 TB",
+      "price": 599,
+      "mrp": 650,
+      "days": "30 Days",
+      "data": "2 TB Storage",
+      "tag": "Cloud Value",
+      "desc": "Google One 2 TB cloud storage monthly plan"
+    },
+    {
+      "id": "google_one_200gb",
+      "name": "Google One - 200 GB",
+      "price": 199,
+      "mrp": 210,
+      "days": "30 Days",
+      "data": "200 GB Storage",
+      "tag": "",
+      "desc": "Google One 200 GB cloud storage monthly plan"
+    }
+  ]
+}

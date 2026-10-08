@@ -1,0 +1,136 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Security model:
+    // - Admin SDK/server APIs are the only writers for money, rewards, orders,
+    //   requests, transactions and role fields.
+    // - A signed-in member may read only documents carrying that member's UID.
+    // - Anonymous/guest sessions can browse catalog data only.
+    // - Everything without an explicit rule is denied.
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function guest() {
+      return signedIn()
+        && (request.auth.token.firebase.sign_in_provider == 'anonymous'
+          || request.auth.token.get('role', '') == 'guest');
+    }
+
+    function member() {
+      return signedIn() && !guest();
+    }
+
+    function admin() {
+      return signedIn()
+        && (request.auth.token.get('admin', false) == true
+          || request.auth.token.get('role', '') == 'admin');
+    }
+
+    function owns(uid) {
+      return member() && request.auth.uid == uid;
+    }
+
+    function profileFields() {
+      return [
+        'uid', 'email', 'googleName', 'googlePhoto', 'username', 'photoURL',
+        'name', 'mobile', 'dob', 'ffUid', 'ffName', 'bio', 'location',
+        'website', 'createdAt', 'lastSeen', 'lastLogin', 'logins', 'updatedAt',
+        'device', 'refBy', 'avatar'
+      ];
+    }
+
+    function profileEmailMatches() {
+      return !('email' in request.resource.data)
+        || request.resource.data.email == request.auth.token.email;
+    }
+
+    // User profile: identity/profile metadata only. Wallet, loyalty, points,
+    // role, PIN, lock and credit-meter fields are intentionally not writable.
+    match /users/{uid} {
+      allow get: if owns(uid);
+      allow list: if false;
+      allow create: if owns(uid)
+        && request.resource.data.keys().hasOnly(profileFields())
+        && request.resource.data.uid == uid
+        && profileEmailMatches();
+      allow update: if owns(uid)
+        && request.resource.data.uid == resource.data.uid
+        && profileEmailMatches()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(profileFields());
+      allow delete: if false;
+    }
+
+    // Financial state is server/Admin SDK only. Client may read its own
+    // current state/history; it can never create, update or delete it.
+    match /wallets/{uid} {
+      allow get: if owns(uid);
+      allow list: if false;
+      allow write: if false;
+    }
+
+    match /wallet_ledger/{ledgerId} {
+      allow get: if owns(resource.data.uid);
+      allow list: if owns(resource.data.uid);
+      allow write: if false;
+    }
+
+    match /transactions/{txId} {
+      allow get: if owns(resource.data.uid);
+      allow list: if owns(resource.data.uid);
+      allow write: if false;
+    }
+
+    match /orders/{orderId} {
+      allow get: if owns(resource.data.uid);
+      allow list: if owns(resource.data.uid);
+      allow write: if false;
+    }
+
+    match /requests/{requestId} {
+      allow get: if owns(resource.data.uid);
+      allow list: if owns(resource.data.uid);
+      allow write: if false;
+    }
+
+    // Support is a non-financial user action. The server still owns status,
+    // assignment, moderation and deletion.
+    match /support_tickets/{ticketId} {
+      allow get: if owns(resource.data.uid);
+      allow list: if owns(resource.data.uid);
+      allow create: if member()
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.keys().hasOnly([
+          'uid', 'subject', 'message', 'category', 'createdAt', 'status'
+        ])
+        && request.resource.data.status == 'open';
+      allow update, delete: if false;
+    }
+
+    // Anonymous guests can explore only published catalog records.
+    match /catalog/{itemId} {
+      allow read: if signedIn();
+      allow write: if admin();
+    }
+
+    // Roles and operational data are never client-writable.
+    match /roles/{uid} {
+      allow read: if admin() || owns(uid);
+      allow write: if false;
+    }
+
+    match /notifications/{id} {
+      allow read, write: if false;
+    }
+
+    match /audit_logs/{id} {
+      allow read, write: if false;
+    }
+
+    match /blocked_devices/{deviceId} {
+      allow read, write: if false;
+    }
+  }
+}

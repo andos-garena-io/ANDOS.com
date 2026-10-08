@@ -1,0 +1,10 @@
+node_modules/
+.vercel/
+.env
+.env.*
+secrets/
+*.pem
+*.key
+*.token
+*.secret
+__pycache__/

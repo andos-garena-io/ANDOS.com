@@ -1,0 +1,1 @@
+window.addEventListener("load",(function(){var e=(location.hash||"").replace("#","");e&&setTimeout((function(){try{"wallet"===e?navigate("wallet"):"support"===e?navigate("support"):"freefire"===e?navigate("plans",{service:"freefire"}):"bgmi"===e?navigate("plans",{service:"bgmi"}):"explore"===e&&navigate("categories")}catch(e){}}),700)}));

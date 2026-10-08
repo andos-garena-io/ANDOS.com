@@ -1,0 +1,54 @@
+# ANDOS server-side security migration
+
+Date: 2026-10-08
+
+## Enforcement model
+
+The project is a Vercel static/"Others" deployment rather than a framework deployment that executes a `middleware.js` file. A file named `middleware.js` would therefore be inert and would create a false security boundary. The protected routes instead rewrite to Node functions before protected HTML or assets are read:
+
+- `/dashboard`, `/dashboard.html`, and `/ANDO.html` -> `api/protected-dashboard.js`
+- `/app-assets/*` -> `api/protected-asset.js`
+- direct `/api/_private/*` access -> 404
+
+Both gates verify `__Host-andos_session` with Firebase Admin `verifySessionCookie(cookie, true)` and redirect unauthenticated dashboard/asset requests to `/`. Responses are private/no-store and carry the security headers/CSP defined in `api/_lib/security.js`.
+
+## Login/session contract
+
+The public index/login pages keep the existing Google popup-first flow, redirect fallback, handoff guard, duplicate redirect protection, and `/login.html` callback compatibility. After Firebase client sign-in, the browser POSTs the ID token to `/api/session`. The server verifies it with Firebase Admin, creates a bounded five-day `HttpOnly; Secure; SameSite=Lax` `__Host-` cookie, and returns only a UID/role summary. Logout POSTs to `/api/session/logout`, clears the cookie, and revokes refresh tokens.
+
+Required Vercel variables (production and preview as appropriate):
+
+- `FIREBASE_SERVICE_ACCOUNT_JSON` (or the three split Firebase Admin variables)
+- `NUMLOOKUP_API_KEY` (newly rotated value only)
+- `AI_WORKER_URL`
+- `TELEGRAM_PROXY_URL`
+- `ANDOS_WORKER_SHARED_SECRET`
+
+The Firebase web configuration remains public. Admin credentials and upstream keys must never be committed, put in HTML/JavaScript, or put in backup names/content.
+
+## Money and role boundaries
+
+`api/actions.js` is the authenticated server action boundary. It derives plan prices from `api/_lib/catalog.json`; it does not trust a browser amount, status, reward, balance, or role. Wallet debits, transaction records, pending orders, and top-up requests are written with Admin SDK transactions. Browser Firestore writers for wallets, transactions, orders, requests, and financial profile fields were removed; profile metadata remains subject to the allowlist in the Firestore rules.
+
+`api/admin/roles.js` is the only role-assignment endpoint. It requires a verified admin claim and accepts only `admin`, `user`, or `guest`; claims take effect on the next token/session. Anonymous or `guest` sessions can use catalog browsing only. Money, orders, top-ups, referrals, profile editing, spins, and reward mutations fail closed in both the API and rules.
+
+The Cloudflare AI and Telegram workers now require `X-ANDOS-Internal: $ANDOS_WORKER_SHARED_SECRET` on proxy calls. The Vercel functions add that header; the worker-side secret must be configured before those worker versions are deployed.
+
+## Firestore release
+
+The hardened rules are in `docs/rules/firestore_hardened.rules` and are released to `cloud.firestore` as ruleset `projects/andos-49b6a/rulesets/b929712e-84d6-4346-8490-6561fd1902d8` (released 2026-10-08 14:05:38 UTC). The rules default deny, enforce ownership, prevent client writes to money/order/request/transaction collections, and support signed-in catalog reads.
+
+## Rollback
+
+1. Keep the current protected HTML/assets and the five pre-change Drive snapshots intact.
+2. To roll back the Vercel code, redeploy the immediately preceding known-good GitHub commit; do not make dashboard files public while rolling back.
+3. If the new server action contract is not ready, temporarily disable the affected client action UI rather than restoring client financial writes.
+4. To roll back Firestore only, release the previous ruleset from the Firebase Rules console/API. Record the exact ruleset ID and time in the incident log; do not replace it with permissive test rules.
+5. If a worker deployment fails, restore the previous worker script and keep the shared secret out of source. Rotate the shared secret if it may have been disclosed.
+6. Rotate any upstream credential that appeared in historical source/backups; do not copy the old value into the rollback source.
+
+## Validation status
+
+Executed locally/live: JavaScript syntax checks; Firebase rules compile/release; real temporary email and anonymous Firebase accounts tested owner profile access, cross-user denial, catalog read, and wallet/order/financial write denial; real Admin-backed session/API integration tested cookie creation, catalog/orders reads, client wallet mutation rejection, and invalid-plan rejection; unauthenticated protected handler tests returned 302 before HTML/asset delivery.
+
+Not executed until production secrets and deployment access are configured: real Vercel curl against the deployed routes; real Google popup/redirect browser/account login; production worker end-to-end calls; production logout/revocation browser test. A static HTTP 200 check is not a full security validation.

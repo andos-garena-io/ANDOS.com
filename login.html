@@ -1988,11 +1988,22 @@ function showUser(user, silent = false) {
   dashboardRedirectStarted = true;
   const navigateToDashboard = async () => {
     try {
-      /* Firebase has already returned a signed-in user. Token refresh is useful
-         but must never trap a successful login on the login page if the network
-         is briefly slow; the dashboard auth guard remains the final check. */
+      /* Firebase login remains popup/redirect-compatible. Before dashboard
+         navigation, exchange the ID token for the HttpOnly server session. */
       if (!user) throw new Error("auth_session_not_ready");
-      try { await user.getIdToken(); } catch (_) {}
+      const idToken = await user.getIdToken();
+      const sessionResponse = await fetch("/api/session", {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ idToken })
+      });
+      const sessionData = await sessionResponse.json().catch(() => ({}));
+      if (!sessionResponse.ok || !sessionData.ok) {
+        const err = new Error(sessionData.error || "server_session_failed");
+        err.code = sessionData.error || "server_session_failed";
+        throw err;
+      }
       try { sessionStorage.setItem("andos_auth_handoff", String(Date.now())); } catch (_) {}
       location.replace("/dashboard");
     } catch (e) {
@@ -2014,7 +2025,8 @@ function handleError(e) {
     "auth/unauthorized-domain":     "This preview domain is not authorised in Firebase.\nSign-in will work on your live site.",
     "auth/operation-not-allowed":   "Google sign-in is not enabled yet",
     "auth/network-request-failed":  "Please check your internet connection",
-    "auth/too-many-requests":       "Please try again in a moment"
+    "auth/too-many-requests":       "Please try again in a moment",
+    "server_session_failed":        "Secure session could not be created. Please try again."
   };
   if (e.code in map) { if (map[e.code]) toast(map[e.code], "err"); return; }
   console.error(e);
