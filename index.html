@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="auth-pending">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
@@ -9,6 +9,9 @@
    scroll/pan normal chalta rahega. text-size-adjust => iOS ka auto text
    bada karna (ek tarah ka zoom) bhi band. */
 html,body{touch-action:pan-x pan-y;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* Do not flash the login screen for a user who already has Firebase auth.
+   The module removes this guard immediately for signed-out users. */
+html.auth-pending .screen,html.auth-pending #toast{visibility:hidden!important}
 </style>
 <script>
 /* ===== ZOOM LOCK (JS) — jin-jin raste se browser zoom karta hai, sab band ===== */
@@ -1931,15 +1934,33 @@ btn.addEventListener("click", async () => {
   }
 });
 
+/* Route guard: an existing Firebase user should never see the login UI flash
+   before being sent directly to the protected dashboard. */
+let redirectResultPending = true;
+let authGuardTimer;
+function releaseAuthGuard() {
+  clearTimeout(authGuardTimer);
+  document.documentElement.classList.remove("auth-pending");
+}
+authGuardTimer = setTimeout(releaseAuthGuard, 5000);
+
 /* returning from a redirect */
 getRedirectResult(auth)
-  .then(res => { if (res?.user) showUser(res.user); else busy(false); })
-  .catch(e => { busy(false); handleError(e); });
+  .then(res => {
+    redirectResultPending = false;
+    if (res?.user) showUser(res.user);
+    else { busy(false); releaseAuthGuard(); }
+  })
+  .catch(e => {
+    redirectResultPending = false;
+    busy(false); releaseAuthGuard(); handleError(e);
+  });
 
 /* already signed in on this device */
 onAuthStateChanged(auth, user => {
   busy(false);
   if (user) showUser(user, true);
+  else if (!redirectResultPending) releaseAuthGuard();
 });
 
 /* Keep the auth handoff focused on authentication. No visit counters,
