@@ -1939,16 +1939,23 @@ btn.addEventListener("click", async () => {
 let redirectResultPending = true;
 let authStateResolved = false;
 let authGuardTimer;
+let authReleaseGraceTimer;
+const AUTH_RESTORE_GRACE_MS = 1800;
 const hasAuthStateReady = typeof auth.authStateReady === "function";
 function releaseAuthGuard() {
   clearTimeout(authGuardTimer);
+  clearTimeout(authReleaseGraceTimer);
   document.documentElement.classList.remove("auth-pending");
 }
 function maybeReleaseAuthGuard() {
-  /* Firebase can resolve getRedirectResult before it restores local auth.
-     Keep the login UI hidden until the SDK's initial state is settled and
-     both checks say there is no user. */
-  if (authStateResolved && !redirectResultPending && !auth.currentUser) releaseAuthGuard();
+  /* Firebase can resolve its initial promise just before local persistence
+     restores the user. Give that restore a final grace window; releasing on
+     the first null callback is what causes the visible login flash. */
+  clearTimeout(authReleaseGraceTimer);
+  if (!authStateResolved || redirectResultPending || auth.currentUser) return;
+  authReleaseGraceTimer = setTimeout(() => {
+    if (authStateResolved && !redirectResultPending && !auth.currentUser) releaseAuthGuard();
+  }, AUTH_RESTORE_GRACE_MS);
 }
 authGuardTimer = setTimeout(releaseAuthGuard, 5000);
 if (hasAuthStateReady) {
@@ -1986,6 +1993,7 @@ onAuthStateChanged(auth, user => {
 let dashboardRedirectStarted = false;
 
 function showUser(user, silent = false) {
+  clearTimeout(authReleaseGraceTimer);
   busy(false);
   if (!user) return;
   try { sessionStorage.setItem("andos_auth_handoff", String(Date.now())); } catch (_) {}
