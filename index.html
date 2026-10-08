@@ -1921,55 +1921,14 @@ onAuthStateChanged(auth, user => {
   if (user) showUser(user, true);
 });
 
-/* ---------- first time on this account, or coming back? ----------
-   Firebase itself tells us: metadata.creationTime === lastSignInTime
-   means the account was created by THIS sign-in.  We also keep a local
-   flag so a re-install on the same device is still treated correctly. */
-function classifyUser(user) {
-  const created  = user.metadata?.creationTime;
-  const lastSeen = user.metadata?.lastSignInTime;
-  let isNew = false;
-  if (created && lastSeen) {
-    isNew = Math.abs(new Date(lastSeen) - new Date(created)) < 60 * 1000;
-  }
-  /* localStorage can throw: private mode, blocked cookies, quota */
-  const store = {
-    get(k) { try { return localStorage.getItem(k); } catch (_) { return null; } },
-    set(k, v) { try { localStorage.setItem(k, v); } catch (_) {} }
-  };
-  const key = "yuva_seen_" + user.uid;
-  let visits = 1, firstAt = null;
-  const seenBefore = store.get(key);
-  if (!seenBefore) {
-    store.set(key, JSON.stringify({ first: Date.now(), visits: 1 }));
-    firstAt = Date.now();
-  } else {
-    try {
-      const d = JSON.parse(seenBefore);
-      d.visits = (d.visits || 1) + 1;
-      d.last = Date.now();
-      store.set(key, JSON.stringify(d));
-      visits = d.visits; firstAt = d.first;
-    } catch (_) {}
-  }
-  return { isNew, visits, firstAt, created };
-}
-
-function fmt(ts) {
-  if (!ts) return "";
-  const d = new Date(ts);
-  return d.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
-}
-
+/* Keep the auth handoff focused on authentication. No visit counters,
+   analytics IDs, or user-identifying telemetry are stored on the login page. */
 let dashboardRedirectStarted = false;
 
 function showUser(user, silent = false) {
   busy(false);
   if (!user) return;
   try { sessionStorage.setItem("andos_auth_handoff", String(Date.now())); } catch (_) {}
-  const info  = classifyUser(user);
-  const first = (user.displayName || "there").split(" ")[0];
-
   /* hand the dashboard a profile in the shape its storage-shim expects */
   try {
     const prev = JSON.parse(localStorage.getItem("andos_user") || "null") || {};
@@ -1987,16 +1946,7 @@ function showUser(user, silent = false) {
     }));
   } catch (e) { /* incognito / storage blocked - dashboard will rebuild it */ }
 
-  if (info.isNew) {
-    console.log("[auth] NEW user", { uid: user.uid, email: user.email });
-    if (!silent) toast("Welcome, " + first + "!", "ok");
-  } else {
-    console.log("[auth] RETURNING user", {
-      uid: user.uid, email: user.email,
-      memberSince: info.created, visits: info.visits
-    });
-    if (!silent) toast("Welcome back, " + first + "!", "ok");
-  }
+  if (!silent) toast("Welcome to ANDOS.", "ok");
 
   /* Do not navigate twice when getRedirectResult and onAuthStateChanged
      both report the same user. Confirm the Firebase session first. */
