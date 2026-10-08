@@ -55,7 +55,7 @@ The intended UI rule is to keep the provider controls clean and avoid duplicate 
 
 ### Dashboard
 
-After authentication, the user reaches the canonical dashboard at `/dashboard`. The dashboard is served internally from `ANDO.html` and contains:
+After authentication, the user reaches the canonical dashboard at `/dashboard`. The dashboard is served from `dashboard.html` and keeps `ANDO.html` as a backward-compatible direct alias. It contains:
 
 - Premium dark/gaming visual system
 - Animated background and brand hero area
@@ -94,11 +94,12 @@ The catalogue is data-driven inside the dashboard so that cards, plans, descript
 
 | Public URL | Purpose | Source/target |
 |---|---|---|
-| `/` | Public entry point | Rewrite to `ANDO.html`; unauthenticated users are redirected to `/login` |
-| `/login` | Clean login route | Rewrite to `login.html` |
-| `/login.html` | Legacy login route and exact OAuth callback | `login.html` |
-| `/dashboard` | Canonical successful-login route | Rewrite to `ANDO.html` |
-| `/ANDO.html` | Direct legacy dashboard route | `ANDO.html` |
+| `/` | Public login entry point | `index.html` (same auth source as `login.html`) |
+| `/login` | Clean login route | Rewrite to `index.html` |
+| `/login.html` | Backward-compatible OAuth/login route | `login.html` |
+| `/dashboard` | Canonical successful-login route | Rewrite to `dashboard.html` |
+| `/dashboard.html` | Direct dashboard route | `dashboard.html` |
+| `/ANDO.html` | Backward-compatible dashboard alias | `ANDO.html` |
 | `/reset-password` | Branded password-reset route | Rewrite to `reset-password.html` |
 
 Successful login redirects to:
@@ -158,8 +159,10 @@ The Firebase email template is intended to use:
 
 ### Frontend
 
-- `login.html` — branded authentication entry point
-- `ANDO.html` — authenticated dashboard and application shell
+- `index.html` — canonical public login entry point
+- `login.html` — backward-compatible login/OAuth callback entry point
+- `dashboard.html` — authenticated dashboard and application shell
+- `ANDO.html` — backward-compatible dashboard alias
 - `reset-password.html` — custom Firebase password-reset handler
 - Inline CSS and JavaScript are used heavily to keep the visual system self-contained.
 
@@ -197,7 +200,7 @@ The Vercel project is hosted at:
 https://andos-com.vercel.app
 ```
 
-`vercel.json` uses explicit rewrites (including `/` to `ANDO.html`) and `trailingSlash: false`. `cleanUrls` is intentionally not enabled because the exact `.html` callback routes must remain backward-compatible.
+`vercel.json` uses explicit rewrites (`/` and `/login` to `index.html`, `/dashboard` to `dashboard.html`) and `trailingSlash: false`. `cleanUrls` is intentionally not enabled because the exact `.html` callback routes must remain backward-compatible.
 
 ---
 
@@ -219,7 +222,9 @@ https://andos-com.vercel.app
 
 ```text
 ANDOS.com/
+├── index.html
 ├── login.html
+├── dashboard.html
 ├── ANDO.html
 ├── reset-password.html
 ├── assets/
