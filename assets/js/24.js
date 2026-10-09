@@ -1,0 +1,10 @@
+
+window.toggleReportOrderMenu = function(){};
+window.chooseReportOrder = function(){};
+window.toggleReportCategoryMenu = function(){};
+window.chooseReportCategory = function(){};
+window.handleReportScreenshot = function(){};
+window.clearReportScreenshot = function(){};
+window.submitSupportReport = function(){ try{ showToast('Support feature removed', 'info'); }catch(e){} };
+window.openSupportModal = function(){};
+window.openAndosSupport = function(){ try{ navigate('support'); }catch(e){} };

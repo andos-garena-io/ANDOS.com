@@ -1,0 +1,3 @@
+
+/* Storage guard: agar localStorage blocked ho (sandbox/private mode) to memory fallback — page kabhi blank na ho */
+(function(){try{var t='__andos_t';window.localStorage.setItem(t,'1');window.localStorage.removeItem(t);}catch(e){var mk=function(){var m={};return{getItem:function(k){return Object.prototype.hasOwnProperty.call(m,k)?m[k]:null;},setItem:function(k,v){m[k]=String(v);},removeItem:function(k){delete m[k];},clear:function(){m={};},key:function(i){return Object.keys(m)[i]||null;},get length(){return Object.keys(m).length;}};};try{Object.defineProperty(window,'localStorage',{value:mk(),configurable:true});}catch(e2){}try{Object.defineProperty(window,'sessionStorage',{value:mk(),configurable:true});}catch(e3){}}})();
