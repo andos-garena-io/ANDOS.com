@@ -4,9 +4,6 @@
   "functions": {
     "api/protected-dashboard.js": {
       "includeFiles": "api/_private/*.html"
-    },
-    "api/protected-asset.js": {
-      "includeFiles": "api/_private/app-assets/**"
     }
   },
   "rewrites": [
@@ -37,10 +34,6 @@
     {
       "source": "/api/ai/:path*",
       "destination": "/api/ai"
-    },
-    {
-      "source": "/app-assets/:path*",
-      "destination": "/api/protected-asset?file=:path*"
     },
     {
       "source": "/reset-password",

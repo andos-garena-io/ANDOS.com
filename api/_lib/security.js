@@ -38,17 +38,18 @@ function securityHeaders(res, options = {}) {
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
   if (options.noStore !== false) res.setHeader('Cache-Control', 'private, no-store, max-age=0, must-revalidate');
-  if (options.html) res.setHeader('Content-Security-Policy', options.csp || dashboardCsp());
+  if (options.html) res.setHeader('Content-Security-Policy', options.csp || dashboardCsp(options.nonce));
 }
 
-function dashboardCsp() {
+function dashboardCsp(nonce = '') {
+  const nonceSource = nonce ? ` 'nonce-${nonce}'` : '';
   return [
     "default-src 'self'",
     "base-uri 'self'",
     "object-src 'none'",
     "frame-ancestors 'none'",
     "form-action 'self' https://accounts.google.com",
-    "script-src 'self' https://www.gstatic.com https://apis.google.com https://accounts.google.com https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://static.cloudflareinsights.com",
+    `script-src 'self'${nonceSource} https://www.gstatic.com https://apis.google.com https://accounts.google.com https://cdn.tailwindcss.com https://cdnjs.cloudflare.com https://static.cloudflareinsights.com`,
     "script-src-attr 'unsafe-inline'",
     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com",
     "font-src 'self' data: https://fonts.gstatic.com https://cdnjs.cloudflare.com",

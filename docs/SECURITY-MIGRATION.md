@@ -4,15 +4,14 @@ Date: 2026-10-08
 
 ## Enforcement model
 
-The project is a Vercel static/"Others" deployment rather than a framework deployment that executes a `middleware.js` file. A file named `middleware.js` would therefore be inert and would create a false security boundary. The protected routes instead rewrite to Node functions before protected HTML or assets are read:
+The project is a Vercel static/"Others" deployment rather than a framework deployment that executes a `middleware.js` file. A file named `middleware.js` would therefore be inert and would create a false security boundary. Protected dashboard routes rewrite to a Node function before protected HTML is read:
 
 - `/dashboard`, `/dashboard.html`, and `/ANDO.html` -> `api/protected-dashboard.js`
-- `/app-assets/*` -> `api/protected-asset.js`
 - direct `/api/_private/*` access -> 404
 
-The deploy bundle must not contain public root copies of `dashboard.html` or `ANDO.html`; `.vercelignore` excludes those aliases so the rewrite cannot be bypassed by Vercel's filesystem-first static routing. The rollback HTML copies remain in Drive and under the protected private bundle, not as public static files.
+The dashboard shell, app CSS, and app JavaScript are bundled in `api/_private/dashboard.html`; there is no separate public `/app-assets/*` route. The deploy bundle must not contain public root copies of `dashboard.html` or `ANDO.html`; `.vercelignore` excludes those aliases so the rewrite cannot be bypassed by Vercel's filesystem-first static routing.
 
-Both gates verify `__Host-andos_session` with Firebase Admin `verifySessionCookie(cookie, true)` and redirect unauthenticated dashboard/asset requests to `/`. Responses are private/no-store and carry the security headers/CSP defined in `api/_lib/security.js`.
+The dashboard function verifies `__Host-andos_session` with Firebase Admin `verifySessionCookie(cookie, true)` before returning dashboard HTML. API handlers independently verify sessions for protected actions. Responses are private/no-store and use the security headers/CSP in `api/_lib/security.js`; a per-response nonce authorizes the dashboard's inline JavaScript.
 
 ## Login/session contract
 
@@ -53,6 +52,6 @@ The hardened rules are in `docs/rules/firestore_hardened.rules` and are released
 
 Production deployment `dpl_6iWqeSi1uzCxYC5fTfryAi4GoSFG` is READY and aliased to `https://andos-com.vercel.app`. Vercel environment variables for Firebase Admin, AI worker, Telegram proxy, and the shared secret are encrypted and present for production/preview. `NUMLOOKUP_API_KEY` is intentionally not set until the historically exposed provider key is revoked and a new value is issued; `/api/numlookup` therefore fails closed with 503 rather than exposing or using the old key.
 
-Executed locally/live: JavaScript syntax checks; Firebase rules compile/release; real temporary email and anonymous Firebase accounts tested owner profile access, cross-user denial, catalog read, and wallet/order/financial write denial; real Admin-backed session/API integration tested cookie creation, catalog/orders reads, client wallet mutation rejection, and invalid-plan rejection; real production ID-token exchange created an HttpOnly Secure bounded session; real production cookie verification, dashboard aliases, protected CSS, logout/revocation, and server action rejection were tested; unauthenticated production requests to `/dashboard`, `/dashboard.html`, `/ANDO.html`, and `/app-assets/dashboard.css` returned 302 before HTML/asset delivery; direct `/api/_private/*` returned 404. Firebase Auth configuration includes `andos-com.vercel.app` in `authorizedDomains`.
+At the 2026-10-08 migration check, the then-current deployment passed JavaScript syntax checks, Firestore rules checks, temporary-account ownership/write-boundary tests, Admin-backed session/API tests, and production checks for ID-token exchange, dashboard aliases, logout/revocation, and server action rejection. At that time the CSS was a separate protected asset, so unauthenticated requests to `/app-assets/dashboard.css` returned 302; that URL is historical because the current dashboard bundles CSS and JavaScript into the private HTML shell. Direct `/api/_private/*` access returned 404. Re-run unauthenticated/signed-in dashboard checks against the consolidated shell after deploying this refactor. Firebase Auth configuration includes `andos-com.vercel.app` in `authorizedDomains`.
 
 A real Google account/popup/redirect browser test was not executed because no supported browser/account automation is available in this environment. The production login code still preserves popup-first, redirect fallback, handoff, and `/login.html` callback behavior; the server ID-token exchange was tested with a real temporary Firebase account. Cloudflare worker-side secret enforcement source is committed, but the local Cloudflare API token was rejected as invalid, so its worker deployment remains a separate follow-up. A static HTTP 200 check is not a full security validation.

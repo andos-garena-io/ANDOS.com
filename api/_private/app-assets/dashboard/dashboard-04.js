@@ -1,1 +1,0 @@
-"serviceWorker"in navigator&&window.addEventListener("load",(async()=>{try{const e=await navigator.serviceWorker.register("./sw.js",{scope:"./"});console.log("Service Worker Registered Successfully. Scope:",e.scope)}catch(e){console.warn("SW registration skipped:",e)}}));

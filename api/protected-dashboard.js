@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const { verifyRequestSession, securityHeaders } = require('./_lib/security');
 
 function sendRecoveryShell(res) {
@@ -19,8 +20,9 @@ module.exports = async function protectedDashboard(req, res) {
     const session = await verifyRequestSession(req);
     if (!session) return sendRecoveryShell(res);
     const file = path.join(__dirname, '_private', 'dashboard.html');
-    const html = fs.readFileSync(file);
-    securityHeaders(res, { html: true });
+    const nonce = crypto.randomBytes(18).toString('base64');
+    const html = fs.readFileSync(file, 'utf8').replaceAll('__ANDOS_SCRIPT_NONCE__', nonce);
+    securityHeaders(res, { html: true, nonce });
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
     res.status(200).send(html);
   } catch (_) {

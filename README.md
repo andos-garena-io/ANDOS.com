@@ -55,7 +55,7 @@ The intended UI rule is to keep the provider controls clean and avoid duplicate 
 
 ### Dashboard
 
-After authentication, the user reaches the canonical dashboard at `/dashboard`. The dashboard is served from `dashboard.html` and keeps `ANDO.html` as a backward-compatible direct alias. It contains:
+After authentication, the user reaches the canonical dashboard at `/dashboard`. Vercel rewrites `/dashboard`, `/dashboard.html`, and `/ANDO.html` to `api/protected-dashboard.js`; that function verifies the server session and serves the private shell from `api/_private/dashboard.html`. The dashboard markup, app CSS, and app JavaScript are bundled in that one protected HTML file. It contains:
 
 - Premium dark/gaming visual system
 - Animated background and brand hero area
@@ -97,9 +97,9 @@ The catalogue is data-driven inside the dashboard so that cards, plans, descript
 | `/` | Public login entry point | `index.html` (same auth source as `login.html`) |
 | `/login` | Clean login route | Rewrite to `index.html` |
 | `/login.html` | Backward-compatible OAuth/login route | `login.html` |
-| `/dashboard` | Canonical successful-login route | Rewrite to `dashboard.html` |
-| `/dashboard.html` | Direct dashboard route | `dashboard.html` |
-| `/ANDO.html` | Backward-compatible dashboard alias | `ANDO.html` |
+| `/dashboard` | Canonical successful-login route | Rewrite to `api/protected-dashboard.js` |
+| `/dashboard.html` | Direct dashboard alias | Rewrite to `api/protected-dashboard.js` |
+| `/ANDO.html` | Backward-compatible dashboard alias | Rewrite to `api/protected-dashboard.js` |
 | `/reset-password` | Branded password-reset route | Rewrite to `reset-password.html` |
 
 Successful login redirects to:
@@ -114,9 +114,9 @@ The exact Telegram redirect callback remains:
 https://andos-com.vercel.app/login.html
 ```
 
-The dashboard keeps a Firebase `onAuthStateChanged` guard. If Firebase reports no authenticated user, or an anonymous user, the page sends the browser to `/login`.
+The server checks the `__Host-andos_session` cookie before serving the dashboard HTML. If the cookie is missing or expired, a small recovery shell attempts to restore the Firebase session and otherwise returns the visitor to `/`. Sensitive API actions verify the server session independently; Firestore Rules remain an additional data boundary.
 
-> Important: static Vercel HTML can still be fetched directly. The client-side guard controls the application view, while real data protection must also be enforced by Firebase Security Rules and server-side token verification.
+> Important: the dashboard source is kept under `api/_private/` and is served by the protected function rather than as a public static file. Keep the server-side route and API checks in place when changing the frontend.
 
 ---
 
@@ -161,10 +161,10 @@ The Firebase email template is intended to use:
 
 - `index.html` — canonical public login entry point
 - `login.html` — backward-compatible login/OAuth callback entry point
-- `dashboard.html` — authenticated dashboard and application shell
-- `ANDO.html` — backward-compatible dashboard alias
+- `api/_private/dashboard.html` — authenticated dashboard; its markup, app CSS, and app JavaScript are bundled in one file and served only by `api/protected-dashboard.js`
+- `api/_private/auth-recover.html` plus `auth-recover.js` — session-recovery shell for returning users
 - `reset-password.html` — custom Firebase password-reset handler
-- Inline CSS and JavaScript are used heavily to keep the visual system self-contained.
+- Firebase/Tailwind and icon/font libraries remain external CDN dependencies; do not place server secrets in the bundled page.
 
 ### Authentication
 
@@ -182,15 +182,7 @@ The Firebase email template is intended to use:
 
 ### Backend workers
 
-The Cloudflare Worker `io` is the pre-existing authentication backend. Its source is maintained in:
-
-```text
-workers/andos-auth-worker.js
-```
-
-The worker exposes protected verification endpoints for Telegram, GitHub, Discord, and Steam. Provider secrets and service credentials stay server-side and must never be placed in frontend HTML.
-
-Other worker sources in the project support bot operations, AI support, Drive backup, and Telegram proxy workflows.
+Cloudflare Workers are deployed separately from the Vercel app. This repository tracks `workers/andos-ai-worker.js` and the older Telegram proxy source at `workers/_legacy/worker_live.js`; Vercel reaches worker services through authenticated API proxies such as `api/ai.js` and `api/telegram/[method].js`. The external authentication worker is not included in this checkout. Provider secrets and service credentials must remain in worker/Vercel secret settings, never in frontend HTML.
 
 ### Deployment
 
@@ -200,7 +192,7 @@ The Vercel project is hosted at:
 https://andos-com.vercel.app
 ```
 
-`vercel.json` uses explicit rewrites (`/` and `/login` to `index.html`, `/dashboard` to `dashboard.html`) and `trailingSlash: false`. `cleanUrls` is intentionally not enabled because the exact `.html` callback routes must remain backward-compatible.
+`vercel.json` uses explicit rewrites (`/` and `/login` to `index.html`; `/dashboard`, `/dashboard.html`, and `/ANDO.html` to `api/protected-dashboard.js`) and `trailingSlash: false`. The protected function includes the private HTML shell and applies a per-response CSP nonce to its inline dashboard scripts. `cleanUrls` is intentionally not enabled because exact `.html` callback routes must remain backward-compatible.
 
 ---
 
@@ -222,19 +214,22 @@ https://andos-com.vercel.app
 
 ```text
 ANDOS.com/
-├── index.html
-├── login.html
-├── dashboard.html
-├── ANDO.html
+├── index.html                         # Public login entry
+├── login.html                         # OAuth/login callback compatibility
 ├── reset-password.html
-├── assets/
-│   └── password-banner.png
-├── vercel.json
+├── assets/password-banner.png
+├── api/
+│   ├── _lib/                           # Firebase Admin and security helpers
+│   ├── _private/
+│   │   ├── auth-recover.html
+│   │   └── dashboard.html              # Single-file protected dashboard
+│   ├── actions.js                      # Authenticated server actions
+│   ├── protected-dashboard.js
+│   └── session/                        # Session create, verify, logout
 ├── workers/
-│   ├── andos-auth-worker.js
 │   ├── andos-ai-worker.js
-│   ├── andos-backup-worker.js
-│   └── andos-bot-worker.js
+│   └── _legacy/worker_live.js
+├── vercel.json
 └── README.md
 ```
 
@@ -244,15 +239,15 @@ Local development and secret material are kept outside the public repository str
 
 ## 8. Current implementation status
 
-- Login and dashboard routes are already deployed and verified with HTTP 200 responses.
-- Firebase dashboard auth guard is present.
-- Custom reset page, reset route, banner asset, and Firebase email-template HTML are included in the deployment candidate.
-- After the repository commit, verify the Vercel deployment and then configure the Firebase action URL.
+- `/dashboard`, `/dashboard.html`, and `/ANDO.html` are protected by the Firebase Admin server-session gate.
+- The dashboard shell, application CSS, and application JavaScript are bundled in `api/_private/dashboard.html`; external vendor CDNs remain separate dependencies.
+- The custom reset page, reset route, banner asset, and Firebase email-template HTML are included in the repository.
+- `docs/SECURITY-MIGRATION.md` records the previous production security validation. Re-run the route, auth-recovery, and password-reset checks after deploying changes to these flows.
 - After deployment, verify:
-  - `/reset-password` returns HTTP 200
-  - `/assets/password-banner.png` returns HTTP 200
-  - Firebase Console uses `https://andos-com.vercel.app/reset-password` as the customized action URL
-  - An actual password-reset email opens the ANDOS page and successfully completes the reset
+  - Unauthenticated dashboard aliases never return dashboard HTML
+  - Signed-in users can restore a session and load the dashboard
+  - `/reset-password` and `/assets/password-banner.png` load successfully
+  - An actual password-reset email opens the ANDOS page and completes the reset
 
 ---
 
